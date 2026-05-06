@@ -17,7 +17,7 @@ const Home = () => {
             allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <div className="hero-overlay" />
+
         </div>
 
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10 text-center text-white">
