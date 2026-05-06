@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Quote, Building, Users, Globe2, HardHat, Factory, Building2, PenTool, Shield } from 'lucide-react';
+import { Quote, HardHat, Factory, Building2, PenTool } from 'lucide-react';
+import ClientSlider from '../components/ClientSlider';
 
 const Clients = () => {
   return (
@@ -30,22 +31,25 @@ const Clients = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl font-extrabold mb-6 text-slate-900 tracking-tight"
+              className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight"
             >
               Industries We Serve
             </motion.h2>
-            <div className="w-24 h-1.5 bg-primary mx-auto rounded-full" />
+            <div className="w-24 h-2 bg-primary mx-auto rounded-full mb-8" />
+            <p className="text-slate-500 text-lg max-w-2xl mx-auto font-medium">
+              We specialize in the complex intersection of architectural design and buildable structural reality.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                industry: 'Façade Contractors',
+                industry: 'Developers',
                 icon: <HardHat className="text-primary" size={32} />,
-                description: 'Specialized structural calculations and shop drawings for specialized envelope contractors.'
+                description: 'Safeguarding investments through technical audits, third-party reviews, and value engineering.'
               },
               {
-                industry: 'Architectural Firms',
+                industry: 'Architects',
                 icon: <PenTool className="text-primary" size={32} />,
                 description: 'Translating design intent into technical schematic proposals and buildable facade details.'
               },
@@ -66,7 +70,7 @@ const Clients = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -12, shadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)" }}
+                whileHover={{ y: -12, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)" }}
                 className="bg-white p-10 rounded-[32px] shadow-sm border border-slate-100 transition-all flex flex-col items-center text-center group"
               >
                 <div className="mb-8 p-6 bg-slate-50 rounded-2xl group-hover:bg-primary/10 transition-colors duration-500">
@@ -100,6 +104,7 @@ const Clients = () => {
         </div>
       </section>
 
+      <ClientSlider />
     </div>
   );
 };

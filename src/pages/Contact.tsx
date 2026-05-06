@@ -6,15 +6,15 @@ const Contact = () => {
     {
       title: 'Engineering Operations – Cochin, India',
       address: '37/1993, 8th Floor, Infftwua Building, Kakkanad, Thrikkakara, Cochin – 682021',
-      email: 'info@realiteza.com',
+      email: 'contact@realiteza.com',
+      phone: '+91 9447460468',
       hours: '09:00 AM – 06:00 PM (Closed on Public Holidays)',
-      phone: null,
-      whatsapp: null
+      whatsapp: '919447460468'
     },
     {
       title: 'Marketing – Europe, UK',
       address: '21 Barland Way, Aylesbury, Buckinghamshire, England, HP18 0UZ',
-      email: 'info@realiteza.com',
+      email: 'contact@realiteza.com',
       phone: '+44 7424 652074',
       whatsapp: '+447424652074',
       hours: null
@@ -22,7 +22,7 @@ const Contact = () => {
     {
       title: 'Marketing – United Arab Emirates, Dubai',
       address: 'United Arab Emirates Street 13, Melhoof 6, Flat 101, Al Warqa, Dubai',
-      email: 'info@realiteza.com',
+      email: 'contact@realiteza.com',
       phone: '+971 509 261691',
       whatsapp: '+971509261691',
       hours: null

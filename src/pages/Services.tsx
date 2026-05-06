@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Building2, PenTool, HardHat, Factory, 
   CheckCircle2, ArrowRight, Zap, Target,
-  Shield, Ruler, FileText, Settings, Calculator
+  Shield, Settings, Calculator
 } from 'lucide-react';
 
 import devImg from '../assets/commercial-dev.png';

@@ -50,11 +50,11 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail size={18} className="mt-1 text-primary" />
-                <a href="mailto:info@realiteza.com" className="hover:text-white transition-colors">info@realiteza.com</a>
+                <a href="mailto:contact@realiteza.com" className="hover:text-white transition-colors">contact@realiteza.com</a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={18} className="mt-1 text-primary" />
-                <span>+44 7424 652074 (UK)</span>
+                <a href="tel:+919447460468" className="hover:text-white transition-colors">+91 9447460468</a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="mt-1 text-primary" />
