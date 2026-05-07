@@ -31,7 +31,7 @@ const Header = () => {
     <>
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,padding,box-shadow,border-color] duration-500 bg-white shadow-md ${
-          isScrolled ? 'py-2' : 'py-4'
+          isScrolled ? 'py-2' : 'py-3'
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
