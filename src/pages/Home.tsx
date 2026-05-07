@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield, Zap, Globe, Building2, PenTool, HardHat, Factory, Mail, Phone, Target, Users, Award, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
-// import logo from '../assets/realitezalogo.png';
+
 import logoabout from '../assets/aboutrealiteza.png';
 import homeConstruction from '../assets/home-construction.jpg';
 
