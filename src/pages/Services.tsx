@@ -7,9 +7,9 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import devImg from '../assets/developers.jpg';
-import archImg from '../assets/bim-model.png';
-import contractorImg from '../assets/facade-installation.png';
+import devImg from '../assets/developers2.jpg';
+import archImg from '../assets/architect.jpg';
+import contractorImg from '../assets/contractors2.jpg';
 import fabricatorImg from '../assets/factory-cnc.png';
 
 const Services = () => {
