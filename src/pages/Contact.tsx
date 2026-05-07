@@ -133,9 +133,6 @@ const Contact = () => {
                 </div>
               ))}
 
-              <div className="h-64 bg-slate-100 rounded-3xl flex items-center justify-center text-slate-400 font-bold border-2 border-dashed border-slate-200">
-                GOOGLE MAP PLACEHOLDER
-              </div>
             </div>
           </div>
         </div>
