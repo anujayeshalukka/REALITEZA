@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Briefcase, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { Mail, Briefcase } from 'lucide-react';
 
 const Careers = () => {
   return (
