@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { HardHat, Factory, Building2, PenTool } from 'lucide-react';
+import { HardHat, Factory, Building2, PenTool, ArrowRight } from 'lucide-react';
 import ClientSlider from '../components/ClientSlider';
 import EndClientSlider from '../components/EndClientSlider';
 
@@ -44,26 +44,30 @@ const Clients = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               {
                 industry: 'Developers',
-                icon: <HardHat className="text-primary" size={32} />,
+                sub: 'Investment Protection',
+                icon: <HardHat size={32} />,
                 description: 'Safeguarding investments through technical audits, third-party reviews, and value engineering.'
               },
               {
                 industry: 'Architects',
-                icon: <PenTool className="text-primary" size={32} />,
+                sub: 'Technical Bridge',
+                icon: <PenTool size={32} />,
                 description: 'Translating design intent into technical schematic proposals and buildable facade details.'
               },
               {
                 industry: 'Fabrication Units',
-                icon: <Factory className="text-primary" size={32} />,
+                sub: 'Production Support',
+                icon: <Factory size={32} />,
                 description: 'Providing precise CNC extraction data and zero-error cutting/drilling fabrication tickets.'
               },
               {
                 industry: 'Main Contractors',
-                icon: <Building2 className="text-primary" size={32} />,
+                sub: 'Technical Authority',
+                icon: <Building2 size={32} />,
                 description: 'Technical audits, interface management, and as-built documentation for site execution.'
               }
             ].map((item, i) => (
@@ -73,14 +77,32 @@ const Clients = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -12, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)" }}
-                className="bg-white p-10 rounded-[32px] shadow-sm border border-slate-100 transition-all flex flex-col items-center text-center group"
+                whileHover={{ y: -15 }}
+                className="group relative bg-white p-6 rounded-[40px] border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500"
               >
-                <div className="mb-8 p-6 bg-slate-50 rounded-2xl group-hover:bg-primary/10 transition-colors duration-500">
-                  {item.icon}
+                <div className="flex items-center gap-5 mb-6">
+                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-1 tracking-tight group-hover:text-primary transition-colors">
+                      {item.industry}
+                    </h3>
+                    <p className="text-primary font-bold text-xs uppercase tracking-widest">
+                      {item.sub}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-tight">{item.industry}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{item.description}</p>
+
+                <p className="text-slate-500 text-md leading-relaxed mb-8">
+                  {item.description}
+                </p>
+
+                <div className="flex items-center gap-2 text-slate-400 group-hover:text-primary font-bold text-xs uppercase tracking-widest transition-all duration-500">
+                  Explore <ArrowRight size={14} />
+                </div>
+
+                <div className="absolute bottom-0 left-10 right-10 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full" />
               </motion.div>
             ))}
           </div>
