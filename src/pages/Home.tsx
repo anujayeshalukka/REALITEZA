@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Shield, Zap, Globe, Building2, PenTool, HardHat, Factory, Mail, Phone, Target, Users, Award, Briefcase } from 'lucide-react';
+import { ArrowRight, Shield, Zap, Globe, Building2, PenTool, HardHat, Factory, Target, Users, Award, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import logoabout from '../assets/aboutrealiteza.png';

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import logoImg from '../assets/realitezalogow.png';
-import logoScrolledImg from '../assets/realitezalogo.png';
+import logoImg from '../assets/realitezaweblogo.jpeg';
+import logoScrolledImg from '../assets/realitezaweblogo.jpeg';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,17 +30,15 @@ const Header = () => {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,padding,box-shadow,border-color] duration-500 ${
-          isScrolled 
-          ? 'bg-white shadow-lg py-2' 
-          : 'bg-black/20 backdrop-blur-sm py-4 border-b border-white/10'
+        className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,padding,box-shadow,border-color] duration-500 bg-white shadow-md ${
+          isScrolled ? 'py-2' : 'py-4'
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <img src={isScrolled ? logoScrolledImg : logoImg} alt="Realiteza Logo" className="h-10 md:h-14 w-auto object-contain transition-all duration-300" />
+              <img src={logoScrolledImg} alt="Realiteza Logo" className="h-10 md:h-14 w-auto object-contain transition-all duration-300" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -49,9 +47,7 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`nav-link ${
-                    isScrolled ? 'text-slate-700' : 'text-white'
-                  } ${location.pathname === link.path ? 'active' : ''}`}
+                  className={`nav-link text-slate-700 ${location.pathname === link.path ? 'active' : ''}`}
                 >
                   {link.name}
                 </Link>
@@ -63,9 +59,7 @@ const Header = () => {
 
             {/* Mobile Menu Toggle */}
             <button 
-              className={`md:hidden p-2 rounded-lg transition-colors ${
-                isScrolled ? 'text-slate-800' : 'text-white'
-              }`}
+              className="md:hidden p-2 rounded-lg transition-colors text-slate-800"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
