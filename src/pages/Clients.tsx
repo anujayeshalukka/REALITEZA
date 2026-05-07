@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Quote, HardHat, Factory, Building2, PenTool } from 'lucide-react';
+import { HardHat, Factory, Building2, PenTool } from 'lucide-react';
 import ClientSlider from '../components/ClientSlider';
 import EndClientSlider from '../components/EndClientSlider';
 

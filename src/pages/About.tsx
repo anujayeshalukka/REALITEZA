@@ -3,15 +3,6 @@ import { Users, Target, Eye, Award, Building, Globe2, Shield, PenTool, HardHat, 
 import ClientSlider from '../components/ClientSlider';
 import aboutImg from '../assets/aboutrealiteza.png';
 const About = () => {
-  const team = [
-    { role: 'Projects & Commercial Operations Manager', icon: <Users size={24} /> },
-    { role: 'Technical Manager', icon: < Award size={24} /> },
-    { role: 'Project Leader', icon: <Award size={24} /> },
-    { role: '2D Designers', icon: <Users size={24} /> },
-    { role: '3D Experts – Tekla, BIM Modeling', icon: <Target size={24} /> },
-    { role: 'Accounts & Admin', icon: <Users size={24} /> },
-  ];
-
   return (
     <div>
       {/* Page Header */}
