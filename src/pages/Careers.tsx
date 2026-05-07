@@ -12,60 +12,48 @@ const Careers = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-4xl md:text-6xl font-extrabold mb-6"
           >
-            Join Our Team
+            Join Our Growing Team
           </motion.h1>
           <p className="text-xl text-slate-400 max-w-2xl leading-relaxed">
-            Join a forward-thinking firm redefining the building envelope industry.
+            Help us redefine the building envelope industry through expert engineering.
           </p>
         </div>
       </section>
 
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="mb-12 leading-tight">
-              <span className="text-sm font-bold block mb-3 text-primary uppercase tracking-[0.4em]">Opportunities</span>
-              <span className="text-3xl md:text-4xl font-black block text-slate-900 tracking-tight flex items-center gap-4">
-                <Briefcase className="text-primary" /> Current Openings
-              </span>
-            </h2>
-            
+          <div className="max-w-3xl mx-auto text-center">
             <motion.div 
-              whileHover={{ x: 10 }}
-              className="p-10 rounded-3xl border-2 border-slate-50 bg-slate-50/50 hover:border-primary/20 hover:bg-white hover:shadow-xl transition-all duration-300 mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="p-12 rounded-[40px] border border-slate-100 bg-slate-50 shadow-sm"
             >
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                <div className="space-y-4">
-                  <div className="flex gap-3">
-                    <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Engineering</span>
-                    <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Full Time</span>
-                  </div>
-                  <h3 className="text-2xl font-extrabold text-slate-900">Facade Structural Engineer</h3>
-                  <div className="flex flex-wrap gap-6 text-slate-500 font-medium">
-                    <div className="flex items-center gap-2"><MapPin size={18} /> Cochin, India / Remote</div>
-                    <div className="flex items-center gap-2"><Clock size={18} /> Immediate Joiner</div>
-                  </div>
-                </div>
-                <button className="btn-primary">Apply Now <ArrowRight className="ml-2" size={18} /></button>
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-8">
+                <Briefcase size={32} />
               </div>
-              <div className="mt-10 pt-10 border-t border-slate-200">
-                <p className="text-slate-600 text-lg leading-relaxed mb-6">
-                  Our firm is looking for experienced structural engineers who wish to be part of our growing team. Candidates should have a strong background in building envelope structural analysis and facade detailing.
-                </p>
-                <div className="flex items-center gap-3 text-slate-900 font-bold">
-                  <Mail className="text-primary" /> 
-                  <span>Interested? Send your resume to <a href="mailto:info@realiteza.com" className="text-primary hover:underline">info@realiteza.com</a></span>
+              
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
+                Facade Structural Engineer
+              </h2>
+              
+              <p className="text-lg text-slate-600 leading-relaxed mb-10">
+                Our firm is in need of experienced structural engineers who wish to be part our growing team. 
+              </p>
+
+              <div className="inline-flex flex-col items-center gap-4 p-8 bg-white rounded-3xl border border-slate-100 shadow-sm">
+                <div className="flex items-center gap-3 text-primary font-bold uppercase tracking-[0.2em] text-sm">
+                  <Mail size={18} /> Get In Touch
                 </div>
+                <p className="text-slate-500 text-sm">You may please reach out to us on:</p>
+                <a 
+                  href="mailto:info@realiteza.com" 
+                  className="text-2xl md:text-3xl font-black text-slate-900 hover:text-primary transition-colors duration-300"
+                >
+                  info@realiteza.com
+                </a>
               </div>
             </motion.div>
-
-            <div className="bg-slate-900 p-12 rounded-[32px] text-white text-center">
-              <h3 className="text-2xl font-bold mb-4">Don't see a matching role?</h3>
-              <p className="text-slate-400 mb-8">We are always looking for talented designers, 3D experts, and project leaders. Send us your portfolio and CV for future considerations.</p>
-              <a href="mailto:info@realiteza.com" className="btn-primary bg-white text-slate-900 hover:bg-slate-200 border-none px-12 py-4">
-                General Application
-              </a>
-            </div>
           </div>
         </div>
       </section>

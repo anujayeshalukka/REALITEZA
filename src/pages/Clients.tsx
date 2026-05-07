@@ -18,12 +18,12 @@ const Clients = () => {
             Our Clients
           </motion.h1>
           <p className="text-xl text-slate-400 max-w-4xl leading-relaxed">
-            In the specialized field of facade engineering, success is built on integrated partnerships. We provide dedicated structural and design engineering to premier Developers, Architects & consultants, contractors & Fabricators ensuring the seamless realization of complex architectural visions for the industry's leading project owners.
+            Success in façade engineering is built on integrated partnerships. We provide dedicated engineering support to premier Developers, Architects, Contractors, and Fabricators.
           </p>
         </div>
       </section>
 
-<EndClientSlider />
+      <EndClientSlider />
 
       {/* Industries Served */}
       <section className="py-24 bg-slate-50 relative overflow-hidden">
@@ -40,8 +40,8 @@ const Clients = () => {
                 Industries We Serve
               </span>
             </motion.h2>
-            <p className="text-slate-500 text-lg max-w-2xl mx-auto font-medium">
-              We specialize in the complex intersection of architectural design and buildable structural reality.
+            <p className="text-slate-500 text-lg max-w-4xl mx-auto font-medium">
+              In the specialized field of facade engineering, success is built on integrated partnerships. We provide dedicated structural and design engineering to premier Developers, Architects & consultants, contractors & Fabricators ensuring the seamless realization of complex architectural visions for the industry's leading project owners.
             </p>
           </div>
 
@@ -131,7 +131,7 @@ const Clients = () => {
       </section> */}
 
       <ClientSlider />
-      
+
     </div>
   );
 };
