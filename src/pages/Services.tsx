@@ -318,7 +318,13 @@ const Services = () => {
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-8 uppercase tracking-widest">Technical Authority & <br/><span className="text-primary">Global Compliance</span></h2>
+              <h2 className="mb-8 leading-tight">
+                <span className="text-sm font-bold block mb-3 text-blue-200 uppercase tracking-[0.4em]">Rigorous Standards</span>
+                <span className="text-3xl md:text-4xl font-black block text-white tracking-tight">
+                  Technical Authority & <br />
+                  <span className="text-primary">Global Compliance</span>
+                </span>
+              </h2>
               <p className="text-slate-400 text-lg mb-10 leading-relaxed">
                 Our engineering hub operates under rigorous international standards, ensuring that every drawing, calculation, and BIM model we deliver is ready for the most demanding consultant reviews.
               </p>
@@ -361,7 +367,12 @@ const Services = () => {
       {/* Final Global CTA */}
       <section className="py-24 bg-slate-50 border-t border-slate-100">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 text-center">
-          <h2 className="text-3xl font-extrabold mb-8 text-slate-900 uppercase tracking-widest">Ready to optimize your project?</h2>
+          <h2 className="mb-10 leading-tight">
+            <span className="text-sm font-bold block mb-3 text-primary uppercase tracking-[0.4em]">Next Steps</span>
+            <span className="text-3xl md:text-5xl font-black block text-slate-900 tracking-tight">
+              Ready to optimize your project?
+            </span>
+          </h2>
           <p className="text-slate-500 max-w-2xl mx-auto mb-12 text-lg leading-relaxed">
             Whether you are at the concept stage or site installation, our engineering hub is ready to support your technical requirements.
           </p>

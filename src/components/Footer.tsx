@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Share2 } from 'lucide-react';
-import Logo from './Logo';
+import logoImg from '../assets/realitezalogow.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="inline-block">
-              <Logo isDark={false} className="h-12 w-auto" />
+              <img src={logoImg} alt="Realiteza Logo" className="h-12 w-auto object-contain" />
             </Link>
             <p className="text-sm leading-relaxed max-w-xs">
               REALITEZA provides specialized design and engineering support for building envelope systems, façade detailing, BIM modeling, and structural design support globally.
@@ -28,6 +28,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/projects" className="hover:text-white transition-colors">Portfolio</Link></li>
+              <li><Link to="/clients" className="hover:text-white transition-colors">Clients</Link></li>
               <li><Link to="/careers" className="hover:text-white transition-colors">Careers</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
@@ -47,17 +48,23 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h4 className="text-white font-bold mb-6">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <Mail size={18} className="mt-1 text-primary" />
+            <ul className="space-y-6">
+              <li className="flex items-center gap-4 group">
+                <div className="p-2.5 bg-white/5 rounded-full flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300">
+                  <Mail size={18} className="text-primary" />
+                </div>
                 <a href="mailto:contact@realiteza.com" className="hover:text-white transition-colors">contact@realiteza.com</a>
               </li>
-              <li className="flex items-start gap-3">
-                <Phone size={18} className="mt-1 text-primary" />
+              <li className="flex items-center gap-4 group">
+                <div className="p-2.5 bg-white/5 rounded-full flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300">
+                  <Phone size={18} className="text-primary" />
+                </div>
                 <a href="tel:+919447460468" className="hover:text-white transition-colors">+91 9447460468</a>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin size={18} className="mt-1 text-primary" />
+              <li className="flex items-center gap-4 group">
+                <div className="p-2.5 bg-white/5 rounded-full flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300">
+                  <MapPin size={18} className="text-primary" />
+                </div>
                 <span className="text-sm">Kakkanad, Cochin, India</span>
               </li>
             </ul>

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Quote, HardHat, Factory, Building2, PenTool } from 'lucide-react';
 import ClientSlider from '../components/ClientSlider';
+import EndClientSlider from '../components/EndClientSlider';
 
 const Clients = () => {
   return (
@@ -21,21 +22,23 @@ const Clients = () => {
         </div>
       </section>
 
-
+<EndClientSlider />
 
       {/* Industries Served */}
-      <section className="py-32 bg-slate-50 relative overflow-hidden">
+      <section className="py-24 bg-slate-50 relative overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <div className="text-center mb-20">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight"
+              className="mb-8 leading-tight"
             >
-              Industries We Serve
+              <span className="text-sm md:text-base font-bold block mb-3 text-primary uppercase tracking-[0.4em]">Targeted Expertise</span>
+              <span className="text-3xl md:text-5xl font-black block text-slate-900 tracking-tight">
+                Industries We Serve
+              </span>
             </motion.h2>
-            <div className="w-24 h-2 bg-primary mx-auto rounded-full mb-8" />
             <p className="text-slate-500 text-lg max-w-2xl mx-auto font-medium">
               We specialize in the complex intersection of architectural design and buildable structural reality.
             </p>
@@ -85,7 +88,7 @@ const Clients = () => {
       </section>
 
       {/* Testimonials Placeholder */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="max-w-4xl mx-auto">
             <div className="bg-primary/5 p-16 rounded-[40px] relative overflow-hidden">
@@ -102,9 +105,10 @@ const Clients = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <ClientSlider />
+      
     </div>
   );
 };

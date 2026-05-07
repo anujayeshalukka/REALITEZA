@@ -23,8 +23,11 @@ const Careers = () => {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-slate-900 flex items-center gap-4">
-              <Briefcase className="text-primary" /> Current Openings
+            <h2 className="mb-12 leading-tight">
+              <span className="text-sm font-bold block mb-3 text-primary uppercase tracking-[0.4em]">Opportunities</span>
+              <span className="text-3xl md:text-4xl font-black block text-slate-900 tracking-tight flex items-center gap-4">
+                <Briefcase className="text-primary" /> Current Openings
+              </span>
             </h2>
             
             <motion.div 

@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Shield, Zap, Globe, Building2, PenTool, HardHat, Factory } from 'lucide-react';
+import { ArrowRight, Shield, Zap, Globe, Building2, PenTool, HardHat, Factory, Mail, Phone, Target, Users, Award, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/realitezalogo.png';
 import homeConstruction from '../assets/home-construction.jpg';
 
 const Home = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center">
+      <section className="relative h-screen flex items-end pb-3 md:pb-5">
         {/* Vimeo Video Background */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <iframe
@@ -20,75 +21,122 @@ const Home = () => {
 
         </div>
 
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10 text-center text-white">
+        <div className="container mx-auto px-4 md:px-8 lg:px-15 relative z-10 text-left text-white">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="w-full max-w-4xl bg-black/30 backdrop-blur-sm px-6 py-6 md:p-8 rounded-[32px] border border-white/10"
           >
-            <h1 className="mb-8 leading-tight">
-              <span className="text-lg md:text-2xl font-medium block mb-3 text-slate-300 uppercase tracking-widest">Expert Building Envelope</span>
-              <span className="text-4xl md:text-6xl lg:text-7xl font-extrabold block text-white">Engineering Solutions</span>
+            <h1 className="mb-2 sm:mb-4 leading-[1.5]">
+              <span className="text-3xl md:text-5xl lg:text-6xl font-bold block text-white tracking-tight">
+                The Building Skin Detailer<br/>
+               <span className='text-[10px] md:text-xl font-medium block mb-2 mt-2 text-white uppercase tracking-[0.2em]'>Literally, 
+                 <span className='font-extrabold text-primary '>Realiteza</span> realizes 
+                 Your design intent.</span>
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-2xl mx-auto text-slate-200">
-              Innovative engineering services for sustainable building envelopes.
-            </p>
-            <div className="flex flex-col md:flex-row gap-4 justify-center">
-              <Link to="/contact" className="btn-primary py-4 px-10 text-lg">
-                Get a Free Quote <ArrowRight className="ml-2" />
-              </Link>
-              <Link to="/services" className="btn-secondary py-4 px-10 text-lg bg-white/10 text-white border-white/30 hover:bg-white/20">
-                Explore Services
-              </Link>
+
+            {/* Contact Info Row */}
+            <div className="flex flex-col md:flex-row items-end md:items-center justify-end gap-3 md:gap-6 text-white/90 text-sm md:text-base font-medium mt-2 sm:mt-4">
+              <a href="mailto:contact@realiteza.com" className="flex items-center gap-3 hover:text-primary transition-all group">
+                <div className="p-2 bg-white/10 rounded-full flex items-center justify-center border border-white/10 group-hover:bg-white/20 transition-all">
+                  <Mail size={18} className="text-primary" />
+                </div>
+                <span className="group-hover:translate-x-0.5 transition-transform">contact@realiteza.com</span>
+              </a>
+              <div className="hidden md:block w-px h-4 bg-white/50" />
+              <a href="tel:+919447460468" className="flex items-center gap-3 hover:text-primary transition-all group">
+                <div className="p-2 bg-white/10 rounded-full flex items-center justify-center border border-white/10 group-hover:bg-white/20 transition-all">
+                  <Phone size={18} className="text-primary" />
+                </div>
+                <span className="group-hover:translate-x-0.5 transition-transform">+91 9447460468</span>
+              </a>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Intro Section */}
-      <section className="py-24 bg-white">
+      <section className="py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <div className="max-w-4xl mx-auto text-center">
+          {/* Centered Heading */}
+          <div className="text-center mb-20">
             <motion.h2
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="text-primary font-bold uppercase tracking-widest text-sm mb-4"
-            >
-              Who We Are
-            </motion.h2>
-            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-2xl md:text-3xl font-medium leading-relaxed text-slate-800"
+              viewport={{ once: true }}
+              className="mb-8 leading-tight"
             >
-              REALITEZA Building Envelope Engineering Services provides specialized design and engineering support for building envelope systems, façade detailing, BIM modeling, fabrication drawings, and structural design support for clients across the world.
-            </motion.p>
+              <span className="text-sm md:text-base font-bold block mb-3 text-primary uppercase tracking-[0.4em]">Who We Are</span>
+              <span className="text-3xl md:text-5xl font-black block text-slate-900 tracking-tight">
+                Global Technical Authority in <br/>
+                Façade Engineering
+              </span>
+            </motion.h2>
+          </div>
+
+          {/* 2-Column Content Below */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center max-w-6xl mx-auto">
+            {/* Logo Column */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex justify-center lg:justify-end"
+            >
+              <img src={logo} alt="Realiteza Logo" className="h-24 md:h-32 w-auto object-contain" />
+            </motion.div>
+
+            {/* Content Column */}
+            <div className="lg:col-span-2 text-left">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-xl md:text-2xl font-medium leading-relaxed text-slate-700"
+              >
+                REALITEZA Building Envelope Engineering Services provides specialized design and engineering support for building envelope systems, façade detailing, BIM modeling, fabrication drawings, and structural design support for clients across the world.
+              </motion.p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-slate-50 relative overflow-hidden">
+      <section className="py-24 bg-slate-100 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 transform translate-x-1/2" />
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Realiteza</h2>
-            <div className="w-20 h-1.5 bg-primary mx-auto" />
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8 leading-tight"
+            >
+              <span className="text-sm md:text-base font-bold block mb-3 text-primary uppercase tracking-[0.4em]">The Realiteza Advantage</span>
+              <span className="text-3xl md:text-5xl font-black block text-slate-900 tracking-tight">
+                Why Choose Realiteza
+              </span>
+            </motion.h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: <Shield />, title: 'Premium Standards', text: 'We maintain high-quality drawing standards and high-end engineered solutions.' },
-              { icon: <Zap />, title: 'Efficiency', text: 'Remote-efficient engineering back-office services that save time and costs.' },
-              { icon: <Globe />, title: 'Global Reach', text: 'Supporting fabrication companies, architects, and contractors across the world.' }
+              { icon: <Shield size={28} />, title: 'Premium Standards', text: 'We maintain high-quality drawing standards and high-end engineered solutions.' },
+              { icon: <Zap size={28} />, title: 'Efficiency', text: 'Remote-efficient engineering back-office services that save time and costs.' },
+              { icon: <Globe size={28} />, title: 'Global Reach', text: 'Supporting fabrication companies, architects, and contractors across the world.' }
             ].map((feature, i) => (
               <motion.div
                 key={i}
                 whileHover={{ y: -10 }}
                 className="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 transition-all"
               >
-                <div className="text-primary mb-6">{feature.icon}</div>
-                <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="text-primary flex-shrink-0 p-3 bg-primary/5 rounded-xl">{feature.icon}</div>
+                  <h3 className="text-xl font-bold text-slate-900 leading-tight">{feature.title}</h3>
+                </div>
                 <p className="text-slate-600 leading-relaxed">{feature.text}</p>
               </motion.div>
             ))}
@@ -99,39 +147,34 @@ const Home = () => {
       {/* Featured Services Preview - Beautified */}
       <section className="py-32 bg-white relative overflow-hidden">
         {/* Subtle background text for architectural feel */}
-        <div className="absolute -bottom-10 -right-10 text-[200px] font-black text-slate-50 select-none pointer-events-none z-0">
-          ENGINEERING
-        </div>
+        {/* <div className="absolute -bottom-20 -right-20 text-[250px] font-black text-slate-100/50 select-none pointer-events-none z-0 tracking-tighter">
+          REALITEZA
+        </div> */}
 
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-          <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8">
-            <div className="max-w-2xl">
-              <motion.span
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="text-primary font-bold uppercase tracking-[0.3em] text-sm mb-4 block"
-              >
-                Specialized Expertise
-              </motion.span>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-4xl md:text-5xl font-extrabold mb-6 text-slate-900 tracking-tight"
-              >
-                Core Services Preview
-              </motion.h2>
-              <p className="text-slate-500 text-lg leading-relaxed">
-                Comprehensive engineering support from tendering to as-built stage, tailored for all project stakeholders.
+          <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8 text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="max-w-2xl"
+            >
+              <h2 className="mb-6 leading-tight">
+                <span className="text-sm md:text-base font-bold block mb-3 text-primary uppercase tracking-[0.4em]">Our Expertise</span>
+                <span className="text-3xl md:text-5xl font-black block text-slate-900 tracking-tight">
+                  Featured Services
+                </span>
+              </h2>
+              <p className="text-slate-500 text-lg font-medium">
+                Comprehensive engineering support for the building skin, from conceptual design to final fabrication drawings.
               </p>
-            </div>
+            </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <Link to="/services" className="group flex items-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:bg-primary transition-all duration-300 shadow-xl shadow-slate-200">
+              <Link to="/services" className="group flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-slate-900 transition-all duration-300 shadow-xl shadow-primary/20 hover:shadow-slate-200">
                 View All Services
                 <div className="bg-white/20 p-1 rounded-full group-hover:translate-x-1 transition-transform">
                   <ArrowRight size={18} />
@@ -140,35 +183,35 @@ const Home = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               {
-                title: 'For Developers',
+                title: 'Developers',
                 desc: 'Engineering Oversight',
                 longDesc: 'Safeguarding investments through technical design audits and value engineering oversight.',
                 icon: <Building2 size={32} />,
-                num: '01'
+                
               },
               {
-                title: 'For Architects',
+                title: 'Architects',
                 desc: 'Concept & BIM Detail',
                 longDesc: 'Translating complex design intent into high-fidelity BIM models and schematic proposals.',
                 icon: <PenTool size={32} />,
-                num: '02'
+                
               },
               {
-                title: 'For Contractors',
+                title: 'Contractors',
                 desc: 'Shop & As-Built Support',
                 longDesc: 'Delivering zero-error shop drawings and comprehensive as-built documentation.',
                 icon: <HardHat size={32} />,
-                num: '03'
+               
               },
               {
-                title: 'For Fabricators',
+                title: 'Fabricators',
                 desc: 'CNC & Manufacturing Data',
                 longDesc: 'Providing precision CNC extraction data and fabrication-ready shop drawings.',
                 icon: <Factory size={32} />,
-                num: '04'
+                
               }
             ].map((service, i) => (
               <motion.div
@@ -178,27 +221,31 @@ const Home = () => {
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -15 }}
-                className="group relative bg-white p-10 rounded-[40px] border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500"
+                className="group relative bg-white p-6 rounded-[40px] border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500"
               >
-                <div className="absolute top-8 right-10 text-5xl font-black text-slate-50 group-hover:text-primary/5 transition-colors duration-500">
+                {/* <div className="absolute top-8 right-10 text-5xl font-black text-slate-50 group-hover:text-primary/5 transition-colors duration-500">
                   {service.num}
+                </div> */}
+
+                <div className="flex items-center gap-5 mb-6">
+                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
+                    {service.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-1 tracking-tight group-hover:text-primary transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-primary font-bold text-xs uppercase tracking-widest">
+                      {service.desc}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="mb-10 w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
-                  {service.icon}
-                </div>
-
-                <h3 className="text-2xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-primary transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-primary font-bold text-xs uppercase tracking-widest mb-4">
-                  {service.desc}
-                </p>
-                <p className="text-slate-500 text-sm leading-relaxed mb-8">
+                <p className="text-slate-500 text-md leading-relaxed mb-8">
                   {service.longDesc}
                 </p>
 
-                <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                <div className="flex items-center gap-2 text-slate-400 group-hover:text-primary font-bold text-xs uppercase tracking-widest transition-all duration-500">
                   Explore <ArrowRight size={14} />
                 </div>
 
@@ -209,25 +256,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-24 bg-primary text-white">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-              <p className="text-xl leading-relaxed text-blue-100">
-                "To be the leader and our clients' most preferable choice in providing engineering design service."
-              </p>
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
-              <p className="text-xl leading-relaxed text-blue-100">
-                "We are committed to maintaining high-quality drawing standards and high-end engineered building envelope solutions."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA Section - Beautified with Background */}
       <section className="relative py-32 bg-slate-900 text-white overflow-hidden">
@@ -260,6 +289,69 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+
+
+<section className="py-32 bg-slate-50 relative overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <motion.h2 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-sm md:text-base font-bold text-primary uppercase tracking-[0.4em] mb-3"
+            >
+              Our Experts
+            </motion.h2>
+            <motion.h3 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight mb-6"
+            >
+              The Engineering Team
+            </motion.h3>
+            <motion.p 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-base text-slate-600 leading-relaxed max-w-2xl mx-auto"
+            >
+              A specialized hierarchy designed for quality assurance and efficient project delivery.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {[
+              { role: 'Projects & Commercial operations Manager', icon: <Briefcase size={24} /> },
+              { role: 'Technical Manager', icon: <Award size={24} /> },
+              { role: 'Project Leader', icon: <Target size={24} /> },
+              { role: '2D Designers', icon: <PenTool size={24} /> },
+              { role: '3D experts-Tekla, BIM modeling & Fabrication documents.', icon: <HardHat size={24} /> },
+              { role: 'Accounts & Admin', icon: <Users size={24} /> },
+            ].map((member, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="group bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:shadow-primary/10 transition-all duration-300 flex items-center gap-4 text-left"
+              >
+                <div className="w-12 h-12 shrink-0 bg-slate-50 text-primary rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300 shadow-sm">
+                  {member.icon}
+                </div>
+                <h4 className="text-base font-bold text-slate-800 leading-snug">
+                  {member.role}
+                </h4>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
     </div>
   );
 };

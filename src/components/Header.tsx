@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import Logo from './Logo';
+import logoImg from '../assets/realitezalogow.png';
+import logoScrolledImg from '../assets/realitezalogo.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,79 +28,90 @@ const Header = () => {
   ];
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
-      }`}
-    >
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <nav className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <Logo isDark={isScrolled} className="h-10 md:h-14 w-auto" />
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`nav-link ${
-                  isScrolled ? 'text-slate-700' : 'text-white'
-                } ${location.pathname === link.path ? 'active' : ''}`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link to="/contact" className="btn-primary">
-              Get a Free Quote
+    <>
+      <header 
+        className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,padding,box-shadow,border-color] duration-500 ${
+          isScrolled 
+          ? 'bg-white shadow-lg py-2' 
+          : 'bg-black/20 backdrop-blur-sm py-4 border-b border-white/10'
+        }`}
+      >
+        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+          <nav className="flex items-center justify-between">
+            {/* Logo */}
+            <Link to="/" className="flex items-center">
+              <img src={isScrolled ? logoScrolledImg : logoImg} alt="Realiteza Logo" className="h-10 md:h-14 w-auto object-contain transition-all duration-300" />
             </Link>
-          </div>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className={`md:hidden p-2 rounded-lg transition-colors ${
-              isScrolled ? 'text-slate-800' : 'text-white'
-            }`}
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </nav>
-      </div>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`nav-link ${
+                    isScrolled ? 'text-slate-700' : 'text-white'
+                  } ${location.pathname === link.path ? 'active' : ''}`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Link to="/contact" className="btn-primary">
+                Get a Free Quote
+              </Link>
+            </div>
 
-      {/* Mobile Navigation Menu */}
+            {/* Mobile Menu Toggle */}
+            <button 
+              className={`md:hidden p-2 rounded-lg transition-colors ${
+                isScrolled ? 'text-slate-800' : 'text-white'
+              }`}
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      {/* Mobile Navigation Menu - Moved outside header to avoid stacking/transform issues */}
       <div 
-        className={`fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-500 md:hidden ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-0 w-full h-full bg-slate-950 z-[100] flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none translate-y-10'
         }`}
       >
         <button 
-          className="absolute top-6 right-6 text-slate-800"
+          className="absolute top-6 right-6 text-white hover:text-primary transition-colors p-2"
           onClick={() => setIsOpen(false)}
         >
-          <X size={32} />
+          <X size={36} />
         </button>
-        {navLinks.map((link) => (
-          <Link
-            key={link.name}
-            to={link.path}
-            className="text-2xl font-semibold text-slate-800 hover:text-primary transition-colors"
+        
+        <div className="flex flex-col items-center gap-8">
+          {navLinks.map((link, i) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className={`text-3xl font-bold transition-all duration-300 ${
+                location.pathname === link.path ? 'text-primary' : 'text-white hover:text-primary'
+              }`}
+              style={{ transitionDelay: `${isOpen ? i * 50 : 0}ms` }}
+              onClick={() => setIsOpen(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+          
+          <Link 
+            to="/contact" 
+            className="btn-primary mt-8 px-12 py-4 text-xl"
             onClick={() => setIsOpen(false)}
           >
-            {link.name}
+            Get a Free Quote
           </Link>
-        ))}
-        <Link 
-          to="/contact" 
-          className="btn-primary mt-4"
-          onClick={() => setIsOpen(false)}
-        >
-          Get a Free Quote
-        </Link>
+        </div>
       </div>
-    </header>
+    </>
   );
 };
 

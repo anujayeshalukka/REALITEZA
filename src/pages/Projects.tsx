@@ -35,6 +35,12 @@ const Projects = () => {
 
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
+          <div className="text-center mb-16">
+            <h2 className="mb-8 leading-tight">
+              <span className="text-sm font-bold block mb-3 text-primary uppercase tracking-[0.4em]">Selected Works</span>
+              <span className="text-3xl md:text-5xl font-black block text-slate-900 tracking-tight">Project Portfolio</span>
+            </h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, i) => (
               <motion.div 
