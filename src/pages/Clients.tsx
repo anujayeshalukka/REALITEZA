@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { HardHat, Factory, Building2, PenTool, ArrowRight } from 'lucide-react';
 import ClientSlider from '../components/ClientSlider';
 import EndClientSlider from '../components/EndClientSlider';
@@ -98,9 +99,9 @@ const Clients = () => {
                   {item.description}
                 </p>
 
-                <div className="flex items-center gap-2 text-slate-400 group-hover:text-primary font-bold text-xs uppercase tracking-widest transition-all duration-500">
+                <Link to="/services" className="flex items-center gap-2 text-slate-400 group-hover:text-primary font-bold text-xs uppercase tracking-widest transition-all duration-500">
                   Explore <ArrowRight size={14} />
-                </div>
+                </Link>
 
                 <div className="absolute bottom-0 left-10 right-10 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full" />
               </motion.div>
