@@ -27,10 +27,10 @@ const Home = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="w-full max-w-4xl mx-auto px-6 py-6 md:p-8"
+            className="w-full max-w-5xl mx-auto px-6 py-6 md:p-8"
           >
             <h1 className="mb-2 sm:mb-4 leading-[1.5]">
-              <span className="text-3xl md:text-5xl lg:text-7xl font-bold block text-white tracking-tight">
+              <span className="text-3xl md:text-5xl lg:text-6xl font-bold block text-white tracking-tight">
                 The Building Skin Detailer<br/>
                <span className='text-[10px] md:text-xl font-medium block mb-2 mt-2 text-white uppercase tracking-[0.2em]'>Literally, 
                  <span className='font-extrabold text-primary '>Realiteza</span> realizes 
