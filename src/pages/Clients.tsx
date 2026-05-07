@@ -18,7 +18,7 @@ const Clients = () => {
             Our Clients
           </motion.h1>
           <p className="text-xl text-slate-400 max-w-4xl leading-relaxed">
-            Success in façade engineering is built on integrated partnerships. We provide dedicated engineering support to premier Developers, Architects, Contractors, and Fabricators.
+            In the specialized field of facade engineering, success is built on integrated partnerships. We provide dedicated structural and design engineering to premier Developers, Architects & consultants, contractors & Fabricators ensuring the seamless realization of complex architectural visions for the industry's leading project owners.
           </p>
         </div>
       </section>
