@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import devImg from '../assets/commercial-dev.png';
+import devImg from '../assets/developers.jpg';
 import archImg from '../assets/bim-model.png';
 import contractorImg from '../assets/facade-installation.png';
 import fabricatorImg from '../assets/factory-cnc.png';
@@ -43,7 +43,7 @@ const Services = () => {
               <div className="space-y-8">
                 <h2 className="mb-8 leading-tight">
                   <span className="text-sm font-bold block mb-3 text-primary uppercase tracking-[0.4em]">Investment Safeguard</span>
-                  <span className="text-4xl md:text-5xl font-black block text-slate-900 tracking-tight uppercase">Services to Developers</span>
+                  <span className="text-4xl md:text-5xl font-black block text-slate-900 tracking-tight">Services to Developers</span>
                 </h2>
                 <p className="text-xl text-slate-600 leading-relaxed font-medium italic border-l-4 border-primary pl-6">
                   "We safeguard your investment by ensuring architectural visions translate into structurally sound, cost-effective realities. We provide critical engineering oversight to mitigate risks, optimize budgets, and guarantee long-term asset performance."
