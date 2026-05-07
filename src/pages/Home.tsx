@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield, Zap, Globe, Building2, PenTool, HardHat, Factory, Mail, Phone, Target, Users, Award, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/realitezalogo.png';
+// import logo from '../assets/realitezalogo.png';
+import logoabout from '../assets/aboutrealiteza.png';
 import homeConstruction from '../assets/home-construction.jpg';
 
 const Home = () => {
@@ -85,7 +86,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="flex justify-center lg:justify-end"
             >
-              <img src={logo} alt="Realiteza Logo" className="h-24 md:h-32 w-auto object-contain" />
+              <img src={logoabout} alt="Realiteza Logo" className="h-24 md:h-32 w-auto object-contain" />
             </motion.div>
 
             {/* Content Column */}
