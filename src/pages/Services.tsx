@@ -322,16 +322,13 @@ const Services = () => {
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-4xl md:text-7xl font-black mb-8 leading-[1.1] uppercase tracking-tighter"
+            className="text-4xl md:text-6xl font-extrabold mb-6"
           >
-            Engineering <br />
-            <span className="text-primary underline decoration-white/10 underline-offset-8">Across The Supply Chain</span>
+            Our Services
           </motion.h1>
-          <div className="max-w-3xl border-l-4 border-primary pl-8 py-2">
-            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light">
-              We act as a dedicated technical partner for all project stakeholders, delivering specialized solutions for <strong className="text-white font-bold">Developers, Architects & Consultants, Main Contractors,</strong> and <strong className="text-white font-bold">Steel & Aluminium Fabricators.</strong>
-            </p>
-          </div>
+          <p className="text-xl text-slate-400 max-w-4xl leading-relaxed">
+            In the specialized field of facade engineering, we act as a dedicated technical partner for all project stakeholders, delivering specialized solutions for Developers, Architects & consultants, Main contractors, Steel & Aluminium fabricators.
+          </p>
         </div>
       </section>
 
