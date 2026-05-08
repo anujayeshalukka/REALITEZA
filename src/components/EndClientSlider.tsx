@@ -16,15 +16,11 @@ const EndClientSlider: React.FC = () => {
     <section className="py-24 bg-white overflow-hidden border-t border-slate-200">
       <div className="container mx-auto px-6 md:px-12 lg:px-20 mb-8">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-sm md:text-base font-bold text-primary uppercase tracking-[0.4em] mb-3">
-            Our Portfolio
-          </h2>
-          <h3 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
+          
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-6">
             End Clients & Associated Projects
-          </h3>
-          <p className="text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Showcasing the ultimate beneficiaries of our premium facade engineering services.
-          </p>
+          </h2>
+          
         </div>
       </div>
 

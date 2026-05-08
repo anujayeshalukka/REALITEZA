@@ -1,110 +1,228 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import logoImg from '../assets/realitezaweblogo.jpeg';
-import logoScrolledImg from '../assets/realitezaweblogo.jpeg';
+import { X, ChevronRight, Plus } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import logoWhite from '../assets/realitezalogow.png';
+import logoColor from '../assets/realitezalogo.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [servicesExpanded, setServicesExpanded] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close menu when location changes
+  useEffect(() => {
+    setIsOpen(false);
+    setServicesExpanded(false);
+  }, [location]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
+
+  // Determine logo to show
+  const currentLogo = isOpen ? logoWhite : (isScrolled ? logoColor : logoWhite);
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services' },
+    {
+      name: 'Services',
+      path: '/services',
+      subServices: [
+        { name: 'Developers', path: '/services#developers' },
+        { name: 'Architects & Consultants', path: '/services#architects' },
+        { name: 'Main Contractors', path: '/services#contractors' },
+        { name: 'Facade Fabricators', path: '/services#fabricators' },
+      ]
+    },
     { name: 'Projects', path: '/projects' },
-    { name: 'Clients', path: '/clients' },
     { name: 'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' },
   ];
 
+  const menuVariants = {
+    closed: {
+      opacity: 0,
+      y: "-100%",
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1] as const,
+        when: "afterChildren"
+      }
+    },
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1] as const,
+        when: "beforeChildren",
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    closed: { opacity: 0, y: 20 },
+    open: { opacity: 1, y: 0 }
+  };
+
   return (
     <>
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,padding,box-shadow,border-color] duration-500 bg-white shadow-md ${
-          isScrolled ? 'py-2' : 'py-3'
-        }`}
+      <header
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled
+            ? 'bg-white/80 backdrop-blur-xl border-b border-slate-200 py-4 shadow-sm'
+            : `bg-transparent py-6 ${location.pathname !== '/' ? 'border-b border-white/10' : ''}`
+          } ${isOpen ? 'bg-transparent border-transparent shadow-none' : ''}`}
       >
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <nav className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center">
-              <img src={logoScrolledImg} alt="Realiteza Logo" className="h-10 md:h-14 w-auto object-contain transition-all duration-300" />
+            <Link to="/" className="relative z-[110]">
+              <img
+                src={currentLogo}
+                alt="Realiteza Logo"
+                className={`w-auto object-contain transition-all duration-500 ${isScrolled ? 'h-9 md:h-11' : 'h-11 md:h-14'
+                  }`}
+              />
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`nav-link text-slate-700 ${location.pathname === link.path ? 'active' : ''}`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <Link to="/contact" className="btn-primary">
-                Get a Free Quote
-              </Link>
-            </div>
-
-            {/* Mobile Menu Toggle */}
-            <button 
-              className="md:hidden p-2 rounded-lg transition-colors text-slate-800"
+            {/* Menu Toggle */}
+            <button
+              className={`relative z-[110] p-2 flex items-center group`}
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              <div className={`transition-all duration-500 ${isOpen ? 'rotate-90' : ''}`}>
+                {isOpen ? (
+                  <X size={32} strokeWidth={1.5} className="text-white" />
+                ) : (
+                  <div className="flex flex-col gap-2 items-end">
+                    <div className={`w-8 h-0.5 transition-colors duration-500 ${isScrolled ? 'bg-slate-900' : 'bg-white'}`}></div>
+                    <div className={`w-5 h-0.5 transition-colors duration-500 ${isScrolled ? 'bg-slate-900' : 'bg-white'}`}></div>
+                  </div>
+                )}
+              </div>
             </button>
           </nav>
         </div>
       </header>
 
-      {/* Mobile Navigation Menu - Moved outside header to avoid stacking/transform issues */}
-      <div 
-        className={`fixed inset-0 w-full h-full bg-slate-950 z-[100] flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden ${
-          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none translate-y-10'
-        }`}
-      >
-        <button 
-          className="absolute top-6 right-6 text-white hover:text-primary transition-colors p-2"
-          onClick={() => setIsOpen(false)}
-        >
-          <X size={36} />
-        </button>
-        
-        <div className="flex flex-col items-center gap-8">
-          {navLinks.map((link, i) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={`text-3xl font-bold transition-all duration-300 ${
-                location.pathname === link.path ? 'text-primary' : 'text-white hover:text-primary'
-              }`}
-              style={{ transitionDelay: `${isOpen ? i * 50 : 0}ms` }}
-              onClick={() => setIsOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))}
-          
-          <Link 
-            to="/contact" 
-            className="btn-primary mt-8 px-12 py-4 text-xl"
-            onClick={() => setIsOpen(false)}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={menuVariants}
+            className="fixed inset-0 z-[105] bg-primary flex flex-col justify-center overflow-y-auto overflow-x-hidden pt-24 pb-12"
           >
-            Get a Free Quote
-          </Link>
-        </div>
-      </div>
+            {/* Dedicated Close Button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors p-2"
+            >
+              <X size={40} strokeWidth={1} />
+            </button>
+            <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                {/* Navigation Items */}
+                <div className="flex flex-col gap-8">
+                  {navLinks.map((link) => (
+                    <motion.div key={link.name} variants={itemVariants}>
+                      {link.subServices ? (
+                        <div className="group">
+                          <button
+                            onClick={() => setServicesExpanded(!servicesExpanded)}
+                            className={`text-4xl md:text-5xl font-semibold transition-all duration-300 uppercase tracking-tight text-left flex items-center gap-4 ${servicesExpanded ? 'text-white' : 'text-white/80 hover:text-white'
+                              }`}
+                          >
+                            {link.name}
+                            <div className={`transition-transform duration-300 ${servicesExpanded ? 'rotate-45' : 'rotate-0'}`}>
+                              <Plus size={32} strokeWidth={1.5} className="text-white/40" />
+                            </div>
+                          </button>
+
+                          <AnimatePresence>
+                            {servicesExpanded && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                className="overflow-hidden ml-4 md:ml-8 mt-4 flex flex-col gap-4 border-l-2 border-white/10 pl-6 md:pl-12"
+                              >
+                                {link.subServices.map((sub) => (
+                                  <Link
+                                    key={sub.name}
+                                    to={sub.path}
+                                    className="text-lg md:text-xl font-medium text-white/60 hover:text-white transition-colors flex items-center gap-2 group/sub"
+                                    onClick={() => {
+                                      setIsOpen(false);
+                                      setServicesExpanded(false);
+                                    }}
+                                  >
+                                    <ChevronRight className="w-4 h-4 text-white opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                                    {sub.name}
+                                  </Link>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      ) : (
+                        <Link
+                          to={link.path}
+                          className={`text-4xl md:text-5xl font-semibold transition-all duration-300 uppercase tracking-tight ${location.pathname === link.path ? 'text-white' : 'text-white/80 hover:text-white'
+                            }`}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Contact Info / Footer in Menu */}
+                <motion.div variants={itemVariants} className="hidden lg:flex flex-col gap-12 border-l border-white/10 pl-24">
+                  <div className="space-y-2">
+                    <p className="text-white/40 font-bold uppercase tracking-widest text-xs">Headquarters</p>
+                    <p className="text-white text-lg leading-relaxed font-medium">
+                      Realiteza Global Engineering<br />
+                      Technical Excellence Center<br />
+                      Middle East | India | Europe
+                    </p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <p className="text-white/40 font-bold uppercase tracking-widest text-xs">Communication</p>
+                    <a href="mailto:info@realiteza.com" className="block text-xl text-white font-bold hover:text-white transition-colors">info@realiteza.com</a>
+                    <a href="tel:+919876543210" className="block text-xl text-white font-bold hover:text-white transition-colors">+91 987 654 3210</a>
+                  </div>
+
+                  <div className="flex gap-6 pt-6">
+                    <a href="https://www.linkedin.com/company/realiteza/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors font-bold uppercase tracking-widest text-xs">LinkedIn</a>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

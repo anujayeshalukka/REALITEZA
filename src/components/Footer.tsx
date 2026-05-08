@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Share2 } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import logoImg from '../assets/realitezalogow.png';
 
 const Footer = () => {
@@ -18,7 +18,23 @@ const Footer = () => {
               REALITEZA provides specialized design and engineering support for building envelope systems, façade detailing, BIM modeling, and structural design support globally.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="hover:text-white transition-colors"><Share2 size={20} /></a>
+              <a href="https://www.linkedin.com/company/realiteza/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect width="4" height="12" x="2" y="9" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -28,7 +44,6 @@ const Footer = () => {
             <ul className="space-y-4">
               <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/projects" className="hover:text-white transition-colors">Portfolio</Link></li>
-              <li><Link to="/clients" className="hover:text-white transition-colors">Clients</Link></li>
               <li><Link to="/careers" className="hover:text-white transition-colors">Careers</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>

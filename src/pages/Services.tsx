@@ -1,19 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Building2, PenTool, HardHat, Factory, 
   CheckCircle2, ArrowRight, Shield, Settings, Calculator,
   Zap, Target, Globe2, Layers, Cpu, Box
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import devImg from '../assets/developers2.jpg';
 import archImg from '../assets/architect.jpg';
 import contractorImg from '../assets/contractors2.jpg';
 import fabricatorImg from '../assets/factory-cnc.png';
+import ClientSlider from '../components/ClientSlider';
+import EndClientSlider from '../components/EndClientSlider';
 
 const Services = () => {
+  const location = useLocation();
   const [activeTab, setActiveTab] = useState('developers');
+
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    if (hash && ['developers', 'architects', 'contractors', 'fabricators'].includes(hash)) {
+      setActiveTab(hash);
+      // Scroll to the tabs section if needed with a small delay for layout stability
+      setTimeout(() => {
+        const element = document.getElementById('services-content');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   const audiences = [
     { id: 'developers', label: 'Developers', icon: <Building2 size={20} /> },
@@ -23,12 +40,12 @@ const Services = () => {
   ];
 
   const FeatureBlock = ({ title, content, icon: Icon }: { title: string; content: string; icon: any }) => (
-    <div className="p-8 bg-white rounded-[32px] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group">
-      <div className="w-12 h-12 bg-slate-50 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+    <div className="p-8 bg-white border border-slate-200 hover:border-primary transition-all duration-300 group">
+      <div className="w-12 h-12 bg-slate-50 text-primary flex items-center justify-center mb-6 group-hover:text-primary transition-all duration-300">
         <Icon size={24} />
       </div>
-      <p className="text-slate-800 text-lg leading-relaxed">
-        <strong className="text-slate-900 font-black block text-xl mb-3">{title}:</strong>
+      <p className="text-slate-800 text-base leading-relaxed">
+        <strong className="text-slate-900 font-bold block text-lg mb-2 uppercase tracking-tight">{title}:</strong>
         {content}
       </p>
     </div>
@@ -42,16 +59,15 @@ const Services = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
                 <h2 className="mb-8 leading-tight">
-                  <span className="text-sm font-bold block mb-3 text-primary uppercase tracking-[0.4em]">Investment Safeguard</span>
-                  <span className="text-4xl md:text-5xl font-black block text-slate-900 tracking-tight">Services to Developers</span>
+                  <span className="text-2xl md:text-4xl lg:text-5xl font-black block text-slate-900 tracking-tight">Services to Developers</span>
                 </h2>
                 <p className="text-xl text-slate-600 leading-relaxed font-medium italic border-l-4 border-primary pl-6">
                   "We safeguard your investment by ensuring architectural visions translate into structurally sound, cost-effective realities. We provide critical engineering oversight to mitigate risks, optimize budgets, and guarantee long-term asset performance."
                 </p>
               </div>
               <div className="relative">
-                <img src={devImg} alt="Commercial Development" className="rounded-[40px] shadow-2xl w-full object-cover aspect-video lg:aspect-auto lg:h-[400px]" />
-                <div className="absolute -bottom-6 -right-6 bg-slate-900 text-white p-8 rounded-3xl shadow-xl hidden md:block">
+                <img src={devImg} alt="Commercial Development" className="border border-slate-200 w-full object-cover aspect-video lg:aspect-auto lg:h-[400px]" />
+                <div className="absolute -bottom-6 -right-6 bg-slate-900 text-white p-8 border border-white/10 hidden md:block">
                   <p className="text-3xl font-black text-primary mb-1">ROI</p>
                   <p className="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Optimized Budgeting</p>
                 </div>
@@ -82,8 +98,8 @@ const Services = () => {
             </div>
 
             <div className="flex justify-center pt-8">
-              <Link to="/contact" className="btn-primary py-6 px-12 text-xl font-black tracking-widest rounded-2xl group flex items-center gap-4">
-                ENGAGE ENGINEERING OVERSIGHT <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+              <Link to="/contact" className="btn-primary py-4 px-8 text-lg font-bold">
+                ENGAGE ENGINEERING OVERSIGHT <ArrowRight />
               </Link>
             </div>
           </div>
@@ -95,15 +111,14 @@ const Services = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8 order-2 lg:order-1">
                 <h2 className="mb-8 leading-tight">
-                  <span className="text-sm font-bold block mb-3 text-primary uppercase tracking-[0.4em]">Technical Bridge</span>
-                  <span className="text-4xl md:text-5xl font-black block text-slate-900 tracking-tight uppercase leading-[1.1]">Services to Architects & Consultants</span>
+                  <span className="text-2xl md:text-4xl lg:text-5xl font-black block text-slate-900 tracking-tight uppercase leading-[1.1]">Services to Architects & Consultants</span>
                 </h2>
                 <p className="text-xl text-slate-600 leading-relaxed font-medium italic border-l-4 border-primary pl-6">
                   "We serve as the technical bridge between your architectural vision and structural reality. By integrating with your team early in the design phase, REALITEZA provides the specialized engineering and visual data required to ensure your concepts are buildable, compliant, and cost-effective."
                 </p>
               </div>
               <div className="order-1 lg:order-2">
-                <img src={archImg} alt="BIM Modeling" className="rounded-[40px] shadow-2xl w-full object-cover aspect-video lg:aspect-auto lg:h-[450px]" />
+                <img src={archImg} alt="BIM Modeling" className="border border-slate-200 w-full object-cover aspect-video lg:aspect-auto lg:h-[450px]" />
               </div>
             </div>
 
@@ -131,8 +146,8 @@ const Services = () => {
             </div>
 
             <div className="flex justify-center pt-8">
-              <Link to="/contact" className="btn-primary py-6 px-12 text-xl font-black tracking-widest rounded-2xl group flex items-center gap-4">
-                REQUEST A SCHEMATIC PROPOSAL <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+              <Link to="/contact" className="btn-primary py-4 px-8 text-lg font-bold">
+                REQUEST A SCHEMATIC PROPOSAL <ArrowRight />
               </Link>
             </div>
           </div>
@@ -144,15 +159,14 @@ const Services = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
                 <h2 className="mb-8 leading-tight">
-                  <span className="text-sm font-bold block mb-3 text-primary uppercase tracking-[0.4em]">Façade Coordination</span>
-                  <span className="text-4xl md:text-5xl font-black block text-slate-900 tracking-tight uppercase">Services to Main Contractors</span>
+                  <span className="text-2xl md:text-4xl lg:text-5xl font-black block text-slate-900 tracking-tight uppercase">Services to Main Contractors</span>
                 </h2>
                 <p className="text-xl text-slate-600 leading-relaxed font-medium italic border-l-4 border-primary pl-6">
                   "As your dedicated facade engineering partner, we protect your critical path by managing the highest-risk structural and envelope packages on your project. We provide comprehensive end-to-end technical oversight, ensuring seamless coordination."
                 </p>
               </div>
               <div>
-                <img src={contractorImg} alt="Site Execution" className="rounded-[40px] shadow-2xl w-full object-cover aspect-video" />
+                <img src={contractorImg} alt="Site Execution" className="border border-slate-200 w-full object-cover aspect-video" />
               </div>
             </div>
 
@@ -185,8 +199,8 @@ const Services = () => {
             </div>
 
             <div className="flex justify-center pt-8">
-              <Link to="/contact" className="btn-primary py-6 px-12 text-xl font-black tracking-widest rounded-2xl group flex items-center gap-4">
-                HIRE YOUR FACADE SUPPORT <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+              <Link to="/contact" className="btn-primary py-4 px-8 text-lg font-bold">
+                HIRE YOUR FACADE SUPPORT <ArrowRight />
               </Link>
             </div>
           </div>
@@ -198,21 +212,19 @@ const Services = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8 order-2 lg:order-1">
                 <h2 className="mb-8 leading-tight">
-                  <span className="text-sm font-bold block mb-3 text-primary uppercase tracking-[0.4em]">One-Point Support</span>
-                  <span className="text-4xl md:text-5xl font-black block text-slate-900 tracking-tight uppercase leading-[1.1]">Services to Facade Fabricators</span>
+                  <span className="text-2xl md:text-4xl lg:text-5xl font-black block text-slate-900 tracking-tight uppercase leading-[1.1]">Services to Facade Fabricators</span>
                 </h2>
                 <p className="text-xl text-slate-600 leading-relaxed font-medium italic border-l-4 border-primary pl-6">
                   "We drive factory-floor efficiency by translating approved shop drawings into exact, zero-error manufacturing data. From tender estimation to site execution, we are your technical integration hub."
                 </p>
               </div>
               <div className="order-1 lg:order-2">
-                <img src={fabricatorImg} alt="Fabrication Support" className="rounded-[40px] shadow-2xl w-full object-cover aspect-video" />
+                <img src={fabricatorImg} alt="Fabrication Support" className="border border-slate-200 w-full object-cover aspect-video" />
               </div>
             </div>
 
             {/* Structural Steel Sub-section */}
-            <div className="bg-slate-900 rounded-[40px] p-12 text-white overflow-hidden relative">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="bg-slate-900 p-12 text-white relative">
               <h3 className="text-2xl md:text-3xl font-black mb-12 text-center uppercase tracking-widest border-b border-white/10 pb-6">
                 Structural Steel Engineering
               </h3>
@@ -264,7 +276,7 @@ const Services = () => {
               />
             </div>
 
-            <div className="bg-slate-50 rounded-[40px] p-10 md:p-16 border border-slate-200">
+            <div className="bg-slate-50 p-10 md:p-16 border border-slate-200">
               <div className="max-w-4xl mx-auto">
                 <div className="flex flex-col md:flex-row items-center gap-12">
                   <div className="w-full md:w-1/2">
@@ -301,8 +313,8 @@ const Services = () => {
             </div>
 
             <div className="flex justify-center pt-8">
-              <Link to="/contact" className="btn-primary py-6 px-12 text-xl font-black tracking-widest rounded-2xl group flex items-center gap-4">
-                GET ONE-POINT SUPPORT <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+              <Link to="/contact" className="btn-primary py-4 px-8 text-lg font-bold">
+                GET ONE-POINT SUPPORT <ArrowRight />
               </Link>
             </div>
           </div>
@@ -316,13 +328,12 @@ const Services = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="bg-slate-900 pt-48 pb-32 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/10 -skew-x-12 transform translate-x-1/4" />
+      <section className="bg-slate-900 pt-48 pb-32 text-white relative">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-4xl md:text-6xl font-extrabold mb-6"
+            className="text-2xl md:text-4xl lg:text-5xl font-extrabold mb-6"
           >
             Our Services
           </motion.h1>
@@ -333,17 +344,17 @@ const Services = () => {
       </section>
 
       {/* Audience Tabs Navigation */}
-      <section className="sticky top-20 z-30 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+      <section id="services-content" className="sticky top-20 z-30 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="flex flex-wrap lg:flex-nowrap justify-between gap-2 py-6">
             {audiences.map((aud) => (
               <button
                 key={aud.id}
                 onClick={() => setActiveTab(aud.id)}
-                className={`flex-1 flex items-center justify-center gap-3 px-6 py-4 rounded-2xl font-black transition-all text-xs uppercase tracking-[0.2em] min-w-[200px] border-2 ${
+                className={`flex-1 flex items-center justify-center gap-3 px-6 py-4 font-bold transition-all text-xs uppercase tracking-[0.2em] min-w-[200px] border-b-2 ${
                   activeTab === aud.id 
-                  ? 'bg-slate-900 text-white border-slate-900 shadow-2xl shadow-slate-900/20' 
-                  : 'text-slate-500 border-transparent hover:border-slate-200 hover:bg-slate-50'
+                  ? 'bg-primary text-white border-primary' 
+                  : 'text-slate-500 border-transparent hover:text-primary'
                 }`}
               >
                 {aud.icon} {aud.label}
@@ -371,11 +382,10 @@ const Services = () => {
       </section>
 
       {/* Trust Signals Section */}
-      <section className="py-32 bg-slate-50 border-y border-slate-100">
+      <section className="py-16 md:py-28 bg-slate-50 border-y border-slate-100">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-sm font-bold text-primary uppercase tracking-[0.4em] mb-4">Quality Assurance</h2>
-            <h3 className="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tight">Technical Authority</h3>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-slate-900 uppercase tracking-tight">Technical Authority</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -396,21 +406,11 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-24 bg-primary relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-black rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
-        </div>
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-8">
-            Ready to optimize your project's <br className="hidden md:block" /> Technical Lifecycle?
-          </h2>
-          <Link to="/contact" className="btn-primary bg-white text-primary hover:bg-slate-100 border-none py-6 px-16 text-xl rounded-2xl font-black uppercase tracking-widest shadow-2xl">
-            Contact Our Technical Team
-          </Link>
-        </div>
-      </section>
+    
+
+  <ClientSlider />
+ <EndClientSlider />
+
     </div>
   );
 };

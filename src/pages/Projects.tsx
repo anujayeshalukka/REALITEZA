@@ -17,19 +17,17 @@ const Projects = () => {
 
   return (
     <div>
-      <section className="bg-slate-900 pt-48 pb-32 text-white relative overflow-hidden">
+      <section className="bg-primary pt-48 pb-20 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/10 -skew-x-12 transform translate-x-1/4" />
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-4xl md:text-6xl font-extrabold mb-6"
+            className="text-2xl md:text-4xl lg:text-5xl font-extrabold mb-6"
           >
             Our Portfolio
           </motion.h1>
-          <p className="text-xl text-slate-400 max-w-2xl leading-relaxed">
-            A showcase of expert engineering support for landmark projects worldwide.
-          </p>
+          
         </div>
       </section>
 
@@ -37,8 +35,7 @@ const Projects = () => {
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="text-center mb-16">
             <h2 className="mb-8 leading-tight">
-              <span className="text-sm font-bold block mb-3 text-primary uppercase tracking-[0.4em]">Selected Works</span>
-              <span className="text-3xl md:text-5xl font-black block text-slate-900 tracking-tight">Project Portfolio</span>
+              <span className="text-2xl md:text-4xl lg:text-5xl font-black block text-slate-900 tracking-tight">Project Portfolio</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
