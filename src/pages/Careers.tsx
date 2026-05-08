@@ -1,59 +1,56 @@
 import { motion } from 'framer-motion';
-import { Mail, Briefcase } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 const Careers = () => {
   return (
     <div>
-      <section className="bg-slate-900 pt-48 pb-32 text-white relative overflow-hidden">
+      {/* Page Header */}
+      <section className="bg-primary pt-48 pb-20 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/10 -skew-x-12 transform translate-x-1/4" />
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-4xl md:text-6xl font-extrabold mb-6"
+            className="text-2xl md:text-4xl lg:text-5xl font-extrabold mb-6"
           >
-            Join Our Growing Team
+            Careers
           </motion.h1>
-          <p className="text-xl text-slate-400 max-w-2xl leading-relaxed">
-            Help us redefine the building envelope industry through expert engineering.
-          </p>
         </div>
       </section>
 
-      <section className="py-24 bg-white">
+      {/* Recruitment Portal Section */}
+      <section className="py-24 md:py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="p-12 rounded-[40px] border border-slate-100 bg-slate-50 shadow-sm"
+              className="bg-slate-50 border border-slate-200 rounded-[3rem] p-12 md:p-20 shadow-xl shadow-slate-200/50"
             >
-              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-8">
-                <Briefcase size={32} />
-              </div>
               
-              <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
-                Facade Structural Engineer
+              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight">
+                Join Our <span className="text-primary">Team</span>
               </h2>
               
-              <p className="text-lg text-slate-600 leading-relaxed mb-10">
-                Our firm is in need of experienced structural engineers who wish to be part our growing team. 
+              <p className="text-slate-600 text-lg md:text-xl font-medium leading-relaxed mb-12 max-w-2xl mx-auto">
+                Realiteza is always looking for exceptional experts to join our global team.
               </p>
 
-              <div className="inline-flex flex-col items-center gap-4 p-8 bg-white rounded-3xl border border-slate-100 shadow-sm">
-                <div className="flex items-center gap-3 text-primary font-bold uppercase tracking-[0.2em] text-sm">
-                  <Mail size={18} /> Get In Touch
-                </div>
-                <p className="text-slate-500 text-sm">You may please reach out to us on:</p>
+              <div className="pt-10 border-t border-slate-200">
+                <p className="text-[12px] font-bold text-slate-800 uppercase tracking-[0.3em] mb-4">
+                  Submit your CV & Portfolio for Consideration
+                </p>
                 <a 
-                  href="mailto:info@realiteza.com" 
-                  className="text-2xl md:text-3xl font-black text-slate-900 hover:text-primary transition-colors duration-300"
+                  href="mailto:contact@realiteza.com" 
+                  className="text-2xl md:text-4xl font-black text-primary hover:text-slate-900 transition-all duration-300 flex items-center justify-center gap-4 group"
                 >
-                  info@realiteza.com
+                  <Mail size={32} className="text-primary group-hover:scale-110 transition-transform" />
+                  contact@realiteza.com
                 </a>
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
