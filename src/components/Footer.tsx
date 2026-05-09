@@ -51,14 +51,13 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services Links */}
           <div>
             <h4 className="text-white font-bold mb-6">Our Services</h4>
             <ul className="space-y-4">
-              <li><Link to="/services" className="hover:text-white transition-colors">Facade Design</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">BIM Modeling</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Fabrication Drawings</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Structural Analysis</Link></li>
+              <li><Link to="/services#developers" className="hover:text-white transition-colors">Developers</Link></li>
+              <li><Link to="/services#architects" className="hover:text-white transition-colors">Architects & Consultants</Link></li>
+              <li><Link to="/services#contractors" className="hover:text-white transition-colors">Main Contractors</Link></li>
+              <li><Link to="/services#fabricators" className="hover:text-white transition-colors">Facade Fabricators</Link></li>
             </ul>
           </div>
 
