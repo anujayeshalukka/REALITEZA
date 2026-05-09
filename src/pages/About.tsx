@@ -22,8 +22,8 @@ const About = () => {
       {/* Overview */}
       <section className="py-16 md:py-28 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
+            <div className="lg:col-span-2 space-y-6">
               {/* <h2 className="mb-8 leading-tight">
                 <span className="text-2xl md:text-4xl lg:text-5xl font-black block text-slate-900 tracking-tight">Company Overview</span>
               </h2> */}
@@ -38,9 +38,9 @@ const About = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="lg:col-span-1 relative"
             >
-              <img src={aboutImg} alt="Realiteza Company Overview" className="w-full h-auto" />
+              <img src={aboutImg} alt="Realiteza Company Overview" className="w-full h-auto rounded-2xl shadow-xl" />
             </motion.div>
           </div>
 

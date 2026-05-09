@@ -67,18 +67,18 @@ const Services = () => {
       {/* Audience Tabs Navigation */}
       <section id="services-content" className="sticky top-20 z-30 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <div className="flex flex-wrap lg:flex-nowrap justify-between gap-2 py-6">
+          <div className="flex flex-wrap lg:flex-nowrap justify-between gap-4 py-6">
             {audiences.map((aud) => (
               <button
                 key={aud.id}
                 onClick={() => setActiveTab(aud.id)}
-                className={`flex-1 flex items-center justify-center gap-3 px-6 py-4 font-bold transition-all text-xs uppercase tracking-[0.2em] min-w-[200px] border-b-2 ${
+                className={`flex-1 flex items-center justify-center px-6 py-4 font-bold transition-all text-xs uppercase tracking-[0.2em] min-w-[200px] border-b-4 ${
                   activeTab === aud.id 
-                  ? 'bg-primary text-white border-primary' 
-                  : 'text-slate-500 border-transparent hover:text-primary'
+                  ? 'bg-primary text-white border-primary-dark shadow-lg scale-[1.02]' 
+                  : 'bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100 hover:text-primary hover:border-slate-300 hover:shadow-md'
                 }`}
               >
-                {aud.icon} {aud.label}
+                {aud.label}
               </button>
             ))}
           </div>

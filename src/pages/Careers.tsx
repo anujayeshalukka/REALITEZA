@@ -26,7 +26,7 @@ const Careers = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-slate-50 border border-slate-200 rounded-[3rem] p-12 md:p-20 shadow-xl shadow-slate-200/50"
+              className=" rounded-[3rem] "
             >
               
               <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight">
@@ -37,7 +37,7 @@ const Careers = () => {
                 Realiteza is always looking for exceptional experts to join our global team.
               </p>
 
-              <div className="pt-10 border-t border-slate-200">
+              <div className="pt-5 ">
                 <p className="text-[12px] font-bold text-slate-800 uppercase tracking-[0.3em] mb-4">
                   Submit your CV & Portfolio for Consideration
                 </p>
