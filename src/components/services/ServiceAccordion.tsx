@@ -12,7 +12,7 @@ interface ServiceAccordionProps {
 }
 
 const ServiceAccordion = ({ items }: ServiceAccordionProps) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   // Split items into two columns
   const midPoint = Math.ceil(items.length / 2);
@@ -46,10 +46,11 @@ const ServiceAccordion = ({ items }: ServiceAccordionProps) => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
+            style={{ willChange: 'height' }}
             transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
           >
             <div className="px-4 pb-8">
-              <p className="text-lg text-slate-600 leading-relaxed max-w-4xl">
+              <p className="text-lg text-slate-600 leading-relaxed max-w-4xl whitespace-pre-line">
                 {item.content}
               </p>
             </div>

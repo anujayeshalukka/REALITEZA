@@ -2,10 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Calculator, Settings, Shield, Layers, PenTool, Cpu, Box,
-  CheckCircle2, ArrowRight, ArrowUpRight
+  ArrowRight, ArrowUpRight, CheckCircle2
 } from 'lucide-react';
-import FeatureBlock from './FeatureBlock';
+import ServiceAccordion from './ServiceAccordion';
 import fabricatorImg from '../../assets/factory-cnc.png';
 
 // Service Images
@@ -53,8 +52,8 @@ const FabricatorsContent = () => {
   ];
 
   return (
-    <div className="space-y-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <div className="sm:space-y-16 space-y-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 gap-8 items-center">
         <div className="space-y-8 order-2 lg:order-1">
           <h2 className="mb-8 leading-tight">
             <span className="text-2xl md:text-4xl lg:text-5xl font-black block text-slate-900 tracking-tight uppercase leading-[1.1]">Services to Facade Fabricators</span>
@@ -68,57 +67,37 @@ const FabricatorsContent = () => {
         </div>
       </div>
 
-      {/* Structural Steel Sub-section */}
-      <div className="bg-slate-900 p-12 text-white relative">
-        <h3 className="text-2xl md:text-3xl font-black mb-12 text-center uppercase tracking-widest border-b border-white/10 pb-6">
-          Structural Steel Engineering
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div className="space-y-4">
-            <Calculator className="text-primary" size={40} />
-            <h4 className="text-xl font-bold uppercase tracking-wide">Pre-Construction Material & Cost Modeling</h4>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              <strong className="text-white block mb-2">Intelligent Forecasting:</strong> Providing real-time quantity takeoffs early in the project lifecycle to ensure financial predictability.
-            </p>
-          </div>
-          <div className="space-y-4">
-            <Settings className="text-primary" size={40} />
-            <h4 className="text-xl font-bold uppercase tracking-wide">Structural Steel Detailing</h4>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              <strong className="text-white block mb-2">Zero-Error Execution:</strong> Delivering highly precise, clash-free steel detailing engineered for flawless fabrication and fitment.
-            </p>
-          </div>
-          <div className="space-y-4">
-            <Shield className="text-primary" size={40} />
-            <h4 className="text-xl font-bold uppercase tracking-wide">Connection Design & PE Stamping</h4>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              <strong className="text-white block mb-2">Certified Execution:</strong> Engineering precise connections to manage forces across complex commercial and industrial projects.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <FeatureBlock
-          icon={Layers}
-          title="Tender Estimation & QS"
-          content="Winning profitable projects requires exact data. We support fabricators during the bidding phase by providing highly accurate preliminary material take-offs and cost estimations."
-        />
-        <FeatureBlock
-          icon={PenTool}
-          title="Comprehensive Shop Drawings & Engineering"
-          content="Developing fabrication-ready shop drawings, system detailing (1:1 and 1:2 interface details), and structural validation including die designs and custom extrusions."
-        />
-        <FeatureBlock
-          icon={Cpu}
-          title="Fabrication Packages Delivery"
-          content="Precision Fabrication Tickets, direct CNC Data Extraction files, and systematic Assembly & Tagging Plans to ensure fast, foolproof factory assembly."
-        />
-        <FeatureBlock
-          icon={Box}
-          title="Material Optimization & MTO"
-          content="Extrusion & Cutting Optimization to eliminate waste. Hardware & Accessory BOMs detaliing precise counts for fasteners, gaskets, and sealants."
-        />
+      <div>
+        <ServiceAccordion items={[
+          {
+            title: "Pre-Construction Material & Cost Modeling",
+            content: "Providing real-time quantity takeoffs early in the project lifecycle to ensure financial predictability."
+          },
+          {
+            title: "Structural Steel Detailing",
+            content: "Delivering highly precise, clash-free steel detailing engineered for flawless fabrication and fitment."
+          },
+          {
+            title: "Connection Design & PE Stamping",
+            content: "Engineering precise connections to manage forces across complex commercial and industrial projects."
+          },
+          {
+            title: "Tender Estimation & QS",
+            content: "Winning profitable projects requires exact data. We support fabricators during the bidding phase by providing highly accurate preliminary material take-offs and cost estimations."
+          },
+          {
+            title: "Comprehensive Shop Drawings & Engineering",
+            content: "Developing fabrication-ready shop drawings, system detailing (1:1 and 1:2 interface details), and structural validation including die designs and custom extrusions."
+          },
+          {
+            title: "Fabrication Packages Delivery",
+            content: "Precision Fabrication Tickets, direct CNC Data Extraction files, and systematic Assembly & Tagging Plans to ensure fast, foolproof factory assembly."
+          },
+          {
+            title: "Material Optimization & MTO",
+            content: "Extrusion & Cutting Optimization to eliminate waste. Hardware & Accessory BOMs detaliing precise counts for fasteners, gaskets, and sealants."
+          }
+        ]} />
       </div>
 
       <div className="bg-slate-50 p-10 md:p-16 border border-slate-200">

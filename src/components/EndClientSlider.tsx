@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import endClient1 from '../assets/clients/endclients (1).jpg';
 import endClient2 from '../assets/clients/endclients (2).jpg';
 import endClient3 from '../assets/clients/endclients (3).jpg';
@@ -12,8 +12,19 @@ import endClient9 from '../assets/clients/endclients (9).jpg';
 const endClients = [endClient1, endClient2, endClient3, endClient4, endClient5, endClient6, endClient8, endClient9];
 
 const EndClientSlider: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
-    <section className="py-24 bg-white overflow-hidden border-t border-slate-200">
+    <section className="sm:py-24 py-16 bg-white overflow-hidden border-t border-slate-200">
       <div className="container mx-auto px-6 md:px-12 lg:px-20 mb-8">
         <div className="text-center max-w-3xl mx-auto">
           
@@ -27,15 +38,18 @@ const EndClientSlider: React.FC = () => {
       {/* Infinite Scroll Slider */}
       <div className="relative">
         {/* Note: we adjust animation duration based on having 9 items to maintain a nice speed */}
-        <div className="flex space-x-10 whitespace-nowrap animate-infinite-scroll py-2 items-center" style={{ animationDuration: '45s' }}>
+        <div 
+          className="flex sm:space-x-10 space-x-6 whitespace-nowrap animate-infinite-scroll py-2 items-center will-change-transform hover:[animation-play-state:paused]" 
+          style={{ animationDuration: isMobile ? '15s' : '30s' }}
+        >
           {endClients.map((clientImg, i) => (
-            <div key={i} className="flex-shrink-0 w-48 h-20 bg-white border border-slate-100 rounded-2xl flex items-center justify-center px-4 py-1 transition-all duration-500 cursor-pointer shadow-sm hover:shadow-md group">
+            <div key={i} className="flex-shrink-0 sm:w-48 w-32 sm:h-20 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center px-4 py-1 transition-all duration-500 cursor-pointer shadow-sm hover:shadow-md group">
               <img src={clientImg} alt={`End Client ${i + 1}`} className="max-w-full max-h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" />
             </div>
           ))}
           {/* Duplicate for seamless loop */}
           {endClients.map((clientImg, i) => (
-            <div key={`dup-${i}`} className="flex-shrink-0 w-48 h-20 bg-white border border-slate-100 rounded-2xl flex items-center justify-center px-4 py-1 transition-all duration-500 cursor-pointer shadow-sm hover:shadow-md group">
+            <div key={`dup-${i}`} className="flex-shrink-0 sm:w-48 w-32 sm:h-20 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center px-4 py-1 transition-all duration-500 cursor-pointer shadow-sm hover:shadow-md group">
               <img src={clientImg} alt={`End Client ${i + 1}`} className="max-w-full max-h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" />
             </div>
           ))}

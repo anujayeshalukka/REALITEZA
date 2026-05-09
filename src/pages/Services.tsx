@@ -116,7 +116,7 @@ const Services = () => {
               <button
                 key={aud.id}
                 onClick={() => setActiveTab(aud.id)}
-                className={`flex-1 flex items-center justify-center px-4 py-6 font-bold transition-all text-xs uppercase tracking-[0.2em] min-w-[200px] border-b-2 ${
+                className={`flex-1 flex items-center justify-center px-4 py-6 font-bold transition-all text-sm uppercase tracking-[0.2em] min-w-[200px] border-b-2 ${
                   activeTab === aud.id 
                   ? 'bg-slate-900 text-white border-slate-700 shadow-lg scale-[1.02]' 
                   : 'bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100 hover:text-primary hover:border-slate-300 hover:shadow-md'

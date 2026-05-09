@@ -8,7 +8,7 @@ import client5 from '../assets/clients/client (5).jpg';
 const clients = [client1, client2, client3, client4, client5];
 const ClientSlider: React.FC = () => {
   return (
-    <section className="py-16 md:py-28 bg-slate-50 border-t border-slate-100">
+    <section className="py-12 md:py-20 bg-slate-50 border-t border-slate-100">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-16 items-center">
           {/* Left Column: Heading */}
