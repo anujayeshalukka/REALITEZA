@@ -3,7 +3,6 @@ import { ArrowRight, Shield, Zap, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import logoabout from '../assets/aboutrealiteza.png';
-import homeConstruction from '../assets/home-construction.jpg';
 
 const Home = () => {
   return (
@@ -32,10 +31,10 @@ const Home = () => {
           >
             <h1 className="mb-2 sm:mb-4 leading-[1.5]">
               <span className="text-2xl md:text-4xl lg:text-5xl font-bold block text-white tracking-tight">
-                The Building Skin Detailer<br/>
-               <span className='text-[10px] md:text-xl font-medium block mb-2 mt-2 text-white uppercase tracking-[0.2em]'>Literally, 
-                 <span className='font-extrabold  '>Realiteza</span> realizes 
-                 Your design intent.</span>
+                The Building Skin Detailer<br />
+                <span className='text-[10px] md:text-xl font-medium block mb-2 mt-2 text-white uppercase tracking-[0.2em]'>Literally,
+                  <span className='font-extrabold  '>Realiteza</span> realizes
+                  Your design intent.</span>
               </span>
             </h1>
 
@@ -105,7 +104,7 @@ const Home = () => {
       </section>
 
 
-  {/* Featured Services Preview - Beautified */}
+      {/* Featured Services Preview - Beautified */}
       <section className="py-16 md:py-28 bg-slate-100 relative overflow-hidden">
         {/* Subtle background text for architectural feel */}
         {/* <div className="absolute -bottom-20 -right-20 text-[250px] font-black text-slate-100/50 select-none pointer-events-none z-0 tracking-tighter">
@@ -146,25 +145,25 @@ const Home = () => {
                 title: 'Developers',
                 desc: 'Engineering Oversight',
                 longDesc: 'Safeguarding investments through technical design audits and value engineering oversight.',
-               
+
               },
               {
                 title: 'Architects',
                 desc: 'Concept & BIM Detail',
                 longDesc: 'Translating complex design intent into high-fidelity BIM models and schematic proposals.',
-                
+
               },
               {
                 title: 'Contractors',
                 desc: 'Shop & As-Built Support',
                 longDesc: 'Delivering zero-error shop drawings and comprehensive as-built documentation.',
-                
+
               },
               {
                 title: 'Fabricators',
                 desc: 'CNC & Manufacturing Data',
                 longDesc: 'Providing precision CNC extraction data and fabrication-ready shop drawings.',
-               
+
               }
             ].map((service) => (
               <motion.div
@@ -176,7 +175,7 @@ const Home = () => {
                 className="group relative bg-white p-8 border border-slate-200 hover:border-primary transition-all duration-300"
               >
                 <div className="flex flex-col gap-6">
-                  
+
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-1 tracking-tight group-hover:text-primary transition-colors">
                       {service.title}
@@ -239,38 +238,39 @@ const Home = () => {
         </div>
       </section>
 
-    
 
-      
+
+
 
       {/* CTA Section - Beautified with Background */}
-      <section className="relative py-16 md:py-28 bg-slate-900 text-white overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src={homeConstruction}
-            alt="Realiteza Construction Engineering"
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/70 to-slate-950" />
-        </div>
-
+      <section className="relative py-16 md:py-28 bg-primary overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-black sm:mb-10 mb-6 leading-tight tracking-tight">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-black sm:mb-10 mb-6 leading-tight tracking-tight text-slate-900">
               Ready to elevate your <br />
-              <span className="text-primary ">Next engineering project?</span>
+              <span className="text-white/80">Next engineering project?</span>
             </h2>
-            <p className="text-slate-400 text-lg mb-12 max-w-2xl mx-auto">
+            <p className="text-white/90 text-lg mb-12 max-w-2xl mx-auto font-medium">
               Our technical experts are ready to translate your architectural vision into buildable, high-performance reality.
             </p>
-            <Link to="/contact" className="btn-primary text-white hover:text-white after:bg-white">
-              Let's Discuss Your Requirements <ArrowRight size={22} />
-            </Link>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Link to="/contact" className="btn-white text-lg">
+                Let's Discuss Your Requirements <ArrowRight size={22} />
+              </Link>
+            </motion.div>
+
+
+            
           </motion.div>
         </div>
       </section>

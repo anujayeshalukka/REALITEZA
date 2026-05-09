@@ -123,11 +123,6 @@ const Projects = () => {
               </Link>
             </motion.div>  
 
-
-
-            {/* <button className="bg-primary text-white px-12 py-5 rounded-full font-bold uppercase tracking-widest hover:bg-slate-900 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
-              Start Your Project Consultation
-            </button> */}
           </motion.div>
         </div>
       </section>

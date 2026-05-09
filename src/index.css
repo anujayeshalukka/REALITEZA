@@ -40,6 +40,10 @@
     @apply text-slate-600 hover:text-primary font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2 transition-all duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
   }
 
+  .btn-white {
+    @apply text-white hover:text-white/80 font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2 transition-all duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full;
+  }
+
   .nav-link {
     @apply text-slate-700 hover:text-primary font-bold uppercase tracking-wider text-xs transition-colors duration-300;
   }
