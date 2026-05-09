@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { useLocation } from 'react-router-dom';
+import MobileBottomNav from './MobileBottomNav';
 
 
 interface LayoutProps {
@@ -23,7 +24,7 @@ const Layout = ({ children }: LayoutProps) => {
       <main className="flex-grow">
         {children}
       </main>
-
+      <MobileBottomNav />
       <Footer />
     </div>
   );

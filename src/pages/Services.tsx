@@ -328,7 +328,7 @@ const Services = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="bg-slate-900 pt-48 pb-32 text-white relative">
+      <section className="bg-primary pt-48 pb-32 text-white relative">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}

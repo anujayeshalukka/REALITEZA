@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Home, Briefcase, Users, Info, MessageSquare } from 'lucide-react';
+import { Home, Briefcase, Layout, Info, MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const MobileBottomNav: React.FC = () => {
   const navItems = [
     { to: '/', icon: <Home size={18} />, label: 'Home' },
     { to: '/services', icon: <Briefcase size={18} />, label: 'Services' },
-    { to: '/clients', icon: <Users size={18} />, label: 'Clients' },
+    { to: '/projects', icon: <Layout size={18} />, label: 'Projects' },
     { to: '/about', icon: <Info size={18} />, label: 'About' },
     { to: '/contact', icon: <MessageSquare size={18} />, label: 'Contact' }
   ];
@@ -15,14 +15,14 @@ const MobileBottomNav: React.FC = () => {
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden pb-safe">
       {/* Glassmorphism Container */}
-      <div className="mx-3 mb-3 bg-white/80 backdrop-blur-xl border border-slate-200/50 rounded-xl shadow-[0_-8px_30px_rgb(0,0,0,0.12)] px-2 py-2 flex justify-around items-center">
+      <div className="mx-3 mb-3 bg-white/80 backdrop-blur-lg border border-slate-200/50 rounded-xl shadow-[0_-8px_30px_rgb(0,0,0,0.12)] px-2 py-2 flex justify-around items-center">
         {navItems.map((item) => (
           <NavLink
             key={item.to}
             to={item.to}
             className={({ isActive }) => 
               `relative flex flex-col items-center gap-1 flex-1 transition-all duration-300 ${
-                isActive ? 'text-primary' : 'text-slate-400'
+                isActive ? 'text-primary' : 'text-slate-500'
               }`
             }
           >
