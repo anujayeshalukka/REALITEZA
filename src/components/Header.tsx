@@ -111,9 +111,9 @@ const Header = () => {
                 {isOpen ? (
                   <X size={32} strokeWidth={1.5} className="text-white" />
                 ) : (
-                  <div className="flex flex-col gap-2 items-end">
-                    <div className={`w-8 h-0.5 transition-colors duration-500 ${isScrolled ? 'bg-slate-900' : 'bg-white'}`}></div>
-                    <div className={`w-5 h-0.5 transition-colors duration-500 ${isScrolled ? 'bg-slate-900' : 'bg-white'}`}></div>
+                  <div className="flex flex-col gap-2.5 items-end">
+                    <div className={`w-10 h-[3px] transition-colors duration-500 ${isScrolled ? 'bg-slate-900' : 'bg-white'}`}></div>
+                    <div className={`w-7 h-[3px] transition-colors duration-500 ${isScrolled ? 'bg-slate-900' : 'bg-white'}`}></div>
                   </div>
                 )}
               </div>

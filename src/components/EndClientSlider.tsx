@@ -5,11 +5,11 @@ import endClient3 from '../assets/clients/endclients (3).jpg';
 import endClient4 from '../assets/clients/endclients (4).jpg';
 import endClient5 from '../assets/clients/endclients (5).jpg';
 import endClient6 from '../assets/clients/endclients (6).jpg';
-import endClient7 from '../assets/clients/endclients (7).jpg';
+
 import endClient8 from '../assets/clients/endclients (8).jpg';
 import endClient9 from '../assets/clients/endclients (9).jpg';
 
-const endClients = [endClient1, endClient2, endClient3, endClient4, endClient5, endClient6, endClient7, endClient8, endClient9];
+const endClients = [endClient1, endClient2, endClient3, endClient4, endClient5, endClient6, endClient8, endClient9];
 
 const EndClientSlider: React.FC = () => {
   return (
