@@ -14,23 +14,40 @@ import project9 from '../assets/projects/project9.jpg';
 import project10 from '../assets/projects/project10.jpg';
 import project11 from '../assets/projects/project11.jpg';
 import project12 from '../assets/projects/project12.jpg';
+import mobproject2 from '../assets/projects/mobproject2.jpg';
+import mobproject3 from '../assets/projects/mobproject3.jpg';
+import mobproject5 from '../assets/projects/mobproject5.jpg';
+import mobproject6 from '../assets/projects/mobproject6.jpg';
+import mobproject9 from '../assets/projects/mobproject9.jpg';
+import mobproject10 from '../assets/projects/mobproject10.jpg';
+import mobproject11 from '../assets/projects/mobproject11.jpg';
 
 const Projects = () => {
   const projectsData = [
     { id: 1, title: 'Baylor College of Medicine', location: 'USA', year: '2023', img: project1 },
-    { id: 2, title: 'Andaz hotel', location: 'Doha', year: 'On going', img: project2 },
-    { id: 3, title: 'Sama Beirut', location: 'Beirut', year: '2016', img: project3 },
+    { id: 2, title: 'Andaz hotel', location: 'Doha', year: 'On going', img: project2, mobImg: mobproject2 },
+    { id: 3, title: 'Sama Beirut', location: 'Beirut', year: '2016', img: project3, mobImg: mobproject3 },
     { id: 4, title: 'Purva Atmosphere', location: 'Bangalore', year: 'On going', img: project4 },
-    { id: 5, title: 'Kaleidoscope', location: 'Abu Dhabi', year: '2013', img: project5 },
-    { id: 6, title: 'Jannah Burj Al Sarab', location: 'Abu Dhabi', year: '2013', img: project6 },
+    { id: 5, title: 'Kaleidoscope', location: 'Abu Dhabi', year: '2013', img: project5, mobImg: mobproject5 },
+    { id: 6, title: 'Jannah Burj Al Sarab', location: 'Abu Dhabi', year: '2013', img: project6, mobImg: mobproject6 },
     { id: 7, title: 'PLOT B02: CO-LAB 01 & Associated road access', location: 'Masdar Abu Dhabi', year: '2024', img: project7 },
     { id: 8, title: 'B+G+1+R Residential villa at al Furjan', location: 'DUBAI, UAE', year: '2024', img: project8 },
-    { id: 9, title: 'Chic Tower', location: 'Dubai', year: '2025', img: project9 },
-    { id: 10, title: 'Elegance Tower', location: 'Dubai', year: '2025', img: project10 },
-    { id: 11, title: 'Proposed 2b+g+3p+38+r Residential Tower', location: 'Dubai', year: '2025', img: project11 },
+    { id: 9, title: 'Chic Tower', location: 'Dubai', year: '2025', img: project9, mobImg: mobproject9 },
+    { id: 10, title: 'Elegance Tower', location: 'Dubai', year: '2025', img: project10, mobImg: mobproject10 },
+    { id: 11, title: 'Proposed 2b+g+3p+38+r Residential Tower', location: 'Dubai', year: '2025', img: project11, mobImg: mobproject11 },
     { id: 12, title: 'SINDALAH VILLAGE', location: 'NEOM, KSA', year: '2024', img: project12 },
   ];
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -42,7 +59,7 @@ const Projects = () => {
   return (
     <div className="bg-white min-h-screen">
       
-      <section className="bg-primary pt-48 pb-20 text-white relative overflow-hidden">
+      <section className="bg-primary pt-24 pb-12 lg:pt-48 lg:pb-20 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/10 -skew-x-12 transform translate-x-1/4" />
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <motion.h1
@@ -64,7 +81,7 @@ const Projects = () => {
             <div className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center bg-slate-50 rounded-t-3xl overflow-hidden">
               <img 
                 key={activeIndex}
-                src={projectsData[activeIndex].img} 
+                src={(isMobile && (projectsData[activeIndex] as any).mobImg) ? (projectsData[activeIndex] as any).mobImg : projectsData[activeIndex].img} 
                 alt={projectsData[activeIndex].title} 
                 className="max-w-full max-h-full object-contain p-4 md:p-8"
               />
@@ -118,7 +135,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <Link to="/services" className="btn-primary">
+              <Link to="/contact" className="btn-primary">
                  Start Your Project Consultation <ArrowRight size={22} />
               </Link>
             </motion.div>  

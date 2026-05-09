@@ -86,8 +86,8 @@ const Header = () => {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled
-            ? 'bg-white/80 backdrop-blur-xl border-b border-slate-200 py-4 shadow-sm'
-            : `bg-transparent py-6 ${location.pathname !== '/' ? 'border-b border-white/10' : ''}`
+            ? 'bg-white/80 backdrop-blur-xl border-b border-slate-200 py-2 shadow-sm'
+            : `bg-transparent py-4 ${location.pathname !== '/' ? 'border-b border-white/10' : ''}`
           } ${isOpen ? 'bg-transparent border-transparent shadow-none' : ''}`}
       >
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
@@ -97,7 +97,7 @@ const Header = () => {
               <img
                 src={currentLogo}
                 alt="Realiteza Logo"
-                className={`w-auto object-contain transition-all duration-500 ${isScrolled ? 'h-9 md:h-11' : 'h-11 md:h-14'
+                className={`w-auto object-contain transition-all duration-500 ${isScrolled ? 'h-8 md:h-10' : 'h-10 md:h-12'
                   }`}
               />
             </Link>

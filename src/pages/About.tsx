@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div>
       {/* Page Header */}
-      <section className="bg-primary pt-48 pb-20 text-white relative overflow-hidden">
+      <section className="bg-primary pt-24 pb-12 lg:pt-48 lg:pb-20 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/10 -skew-x-12 transform translate-x-1/4" />
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <motion.h1
