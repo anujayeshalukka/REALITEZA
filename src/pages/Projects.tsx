@@ -51,7 +51,7 @@ const Projects = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % projectsData.length);
-    }, 1500); // Cycle every 2 seconds
+    }, 2000); // Cycle every 2 seconds
     return () => clearInterval(timer);
   }, [projectsData.length]);
 
