@@ -108,7 +108,7 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="flex lg:justify-end justify-center"
+              className="flex lg:justify-end justify-center lg:col-span-3 mt-4"
             >
               <Link to="/services" className="btn-primary">
                 View All Services <ArrowRight size={22} />
