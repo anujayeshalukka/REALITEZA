@@ -40,7 +40,7 @@ const About = () => {
               viewport={{ once: true }}
               className="lg:col-span-1 relative"
             >
-              <img src={aboutImg} alt="Realiteza Company Overview" className="w-full h-auto rounded-2xl shadow-xl" />
+              <img src={aboutImg} alt="Realiteza Company Overview" className="w-full h-auto " />
             </motion.div>
           </div>
 
