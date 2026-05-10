@@ -97,7 +97,7 @@ const Header = () => {
               <img
                 src={currentLogo}
                 alt="REALITEZA Logo"
-                className={`w-auto object-contain transition-all duration-500 ${isScrolled ? 'h-10 md:h-12' : 'h-16 md:h-24'
+                className={`w-auto object-contain transition-all duration-500 ${isScrolled ? 'h-6 md:h-8' : 'h-8 md:h-10'
                   }`}
               />
             </Link>
