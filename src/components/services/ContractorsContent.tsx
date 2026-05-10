@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import ServiceAccordion from './ServiceAccordion';
-import contractorImg from '../../assets/contractors2.jpg';
+import contractorIllustration from '../../assets/services/contractors_execution.png';
 
 const ContractorsContent = () => {
   const facadeServices = [
@@ -58,7 +58,7 @@ const ContractorsContent = () => {
           </div>
         </div>
         <div>
-          <img src={contractorImg} alt="Site Execution" className="border border-slate-200 w-full object-cover aspect-video shadow-2xl rounded-2xl" />
+          <img src={contractorIllustration} alt="Technical Execution Illustration" className="w-full h-auto max-h-[500px] object-contain rounded-2xl shadow-sm" />
         </div>
       </div>
 

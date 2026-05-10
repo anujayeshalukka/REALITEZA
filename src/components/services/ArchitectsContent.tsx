@@ -35,7 +35,7 @@ const ArchitectsContent = () => {
           </p>
         </div>
         <div className="order-1 lg:order-2">
-          <img src={archIllustration} alt="Architectural Engineering Illustration" className="w-full h-auto max-h-[500px] object-contain rounded-2xl shadow-sm" />
+          <img src={archIllustration} alt="Architectural Engineering Illustration" className="w-full h-auto max-h-[500px] object-contain " />
         </div>
       </div>
 
