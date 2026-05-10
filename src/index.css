@@ -53,14 +53,14 @@
 
   .container {
     @apply mx-auto px-0;
-    width: 94% !important;
+    width: 96% !important;
     max-width: none !important;
   }
 
   @media (min-width: 2000px) {
     .container {
       width: 100% !important;
-      max-width: 1880px !important;
+      max-width: 1920px !important;
     }
   }
 }
