@@ -30,7 +30,7 @@ const Careers = () => {
             >
               
               <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight">
-                Join Our <span className="text-primary">Team</span>
+                Join Our Team
               </h2>
               
               <p className="text-slate-600 text-lg md:text-xl font-medium leading-relaxed mb-12 max-w-2xl mx-auto">
