@@ -139,16 +139,16 @@ const Header = () => {
               <X size={40} strokeWidth={1} />
             </button>
             <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+              <div className="max-w-2xl mx-auto flex flex-col items-center text-center gap-10">
                 {/* Navigation Items */}
-                <div className="flex flex-col gap-8">
+                <div className="flex flex-col gap-10">
                   {navLinks.map((link) => (
                     <motion.div key={link.name} variants={itemVariants}>
                       {link.subServices ? (
                         <div className="group">
                           <button
                             onClick={() => setServicesExpanded(!servicesExpanded)}
-                            className={`text-4xl md:text-5xl font-semibold transition-all duration-300 uppercase tracking-tight text-left flex items-center gap-4 ${servicesExpanded ? 'text-white' : 'text-white/80 hover:text-white'
+                            className={`text-4xl md:text-5xl lg:text-6xl font-semibold transition-all duration-300 uppercase tracking-tight text-center justify-center flex items-center gap-4 ${servicesExpanded ? 'text-white' : 'text-white/80 hover:text-white'
                               }`}
                           >
                             {link.name}
@@ -163,13 +163,13 @@ const Header = () => {
                                 initial={{ height: 0, opacity: 0 }}
                                 animate={{ height: 'auto', opacity: 1 }}
                                 exit={{ height: 0, opacity: 0 }}
-                                className="overflow-hidden ml-4 md:ml-8 mt-4 flex flex-col gap-4 border-l-2 border-white/10 pl-6 md:pl-12"
+                                className="overflow-hidden mt-6 flex flex-col gap-4 border-l lg:border-l-0 border-white/10 pl-6 lg:pl-0 text-center"
                               >
                                 {link.subServices.map((sub) => (
                                   <Link
                                     key={sub.name}
                                     to={sub.path}
-                                    className="text-lg md:text-xl font-medium text-white/60 hover:text-white transition-colors flex items-center gap-2 group/sub"
+                                    className="text-lg md:text-2xl font-medium text-white/60 hover:text-white transition-colors flex items-center justify-center gap-2 group/sub"
                                     onClick={() => {
                                       setIsOpen(false);
                                       setServicesExpanded(false);
@@ -186,7 +186,7 @@ const Header = () => {
                       ) : (
                         <Link
                           to={link.path}
-                          className={`text-4xl md:text-5xl font-semibold transition-all duration-300 uppercase tracking-tight ${location.pathname === link.path ? 'text-white' : 'text-white/80 hover:text-white'
+                          className={`text-4xl md:text-5xl lg:text-6xl font-semibold transition-all duration-300 uppercase tracking-tight text-center ${location.pathname === link.path ? 'text-white' : 'text-white/80 hover:text-white'
                             }`}
                           onClick={() => setIsOpen(false)}
                         >
@@ -197,27 +197,8 @@ const Header = () => {
                   ))}
                 </div>
 
-                {/* Contact Info / Footer in Menu */}
-                <motion.div variants={itemVariants} className="flex flex-col gap-10 lg:gap-12 border-t lg:border-t-0 lg:border-l border-white/10 pt-10 lg:pt-0 lg:pl-24 mt-4 lg:mt-0">
-                  <div className="space-y-2">
-                    <p className="text-white/40 font-bold uppercase tracking-widest text-xs">Locations</p>
-                    <p className="text-white text-lg leading-relaxed font-medium">
-                      Realiteza Building Envelope Engineering Services Private Limited<br />
-                      
-                      UAE | IND | UK
-                    </p>
-                  </div>
-
-                  <div className="space-y-2">
-                    <p className="text-white/40 font-bold uppercase tracking-widest text-xs">Communication</p>
-                    <a href="mailto:contact@realiteza.com" className="block text-xl text-white font-bold hover:text-white transition-colors">contact@realiteza.com</a>
-                    <a href="tel:+919447460468" className="block text-xl text-white font-bold hover:text-white transition-colors">+91 944 746 0468</a>
-                  </div>
-
-                  <div className="flex gap-6 pt-6">
-                    <a href="https://www.linkedin.com/company/realiteza/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors font-bold uppercase tracking-widest text-xs">LinkedIn</a>
-                  </div>
-                </motion.div>
+                </div>
+              </div>
               </div>
             </div>
           </motion.div>
