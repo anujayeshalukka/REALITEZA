@@ -24,7 +24,7 @@ const ArchitectsContent = () => {
   ];
 
   return (
-    <div className="sm:space-y-16 space-y-8">
+    <div className="container mx-auto px-6 md:px-12 lg:px-20 sm:space-y-16 space-y-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 gap-8 items-center">
         <div className="space-y-8 order-2 lg:order-1">
           <h2 className="mb-8 leading-tight">
@@ -43,7 +43,7 @@ const ArchitectsContent = () => {
         <ServiceAccordion items={architectsServices} />
       </div>
 
-      <div className="flex justify-center pt-8">
+      <div className="flex justify-center pt-8 pb-12">
         <Link to="/contact" className="btn-primary text-md font-bold">
           REQUEST A SCHEMATIC PROPOSAL <ArrowRight />
         </Link>

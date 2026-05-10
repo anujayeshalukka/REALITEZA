@@ -43,7 +43,7 @@ const ContractorsContent = () => {
   ];
 
   return (
-    <div className="sm:space-y-24 space-y-12">
+    <div className="container mx-auto px-6 md:px-12 lg:px-20 sm:space-y-24 space-y-12">
       {/* Header Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 gap-8 items-center">
         <div className="space-y-8">
@@ -78,7 +78,7 @@ const ContractorsContent = () => {
         <ServiceAccordion items={structuralServices} />
       </div>
 
-      <div className="flex justify-center ">
+      <div className="flex justify-center pb-12">
         <Link to="/contact" className="btn-primary text-md font-bold">
           HIRE YOUR FACADE SUPPORT <ArrowRight />
         </Link>

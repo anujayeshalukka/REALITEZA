@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ArrowRight, ArrowUpRight, CheckCircle2
+  ArrowRight, ArrowUpRight
 } from 'lucide-react';
 import ServiceAccordion from './ServiceAccordion';
 import fabricatorImg from '../../assets/factory-cnc.png';
+import fabricationPackageImg from '../../assets/services/fabrication_package.png';
+import siteExecutionImg from '../../assets/services/site_execution.png';
 
 // Service Images
 import ucwCurtainwall from '../../assets/services/UCWCurtainwall.webp';
@@ -53,99 +55,178 @@ const FabricatorsContent = () => {
 
   return (
     <div className="sm:space-y-16 space-y-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 gap-8 items-center">
-        <div className="space-y-8 order-2 lg:order-1">
-          <h2 className="mb-8 leading-tight">
-            <span className="text-2xl md:text-4xl lg:text-5xl font-black block text-slate-900 tracking-tight uppercase leading-[1.1]">Services to Facade Fabricators</span>
-          </h2>
-          <p className="text-xl text-slate-600 leading-relaxed font-medium italic border-l-4 border-primary pl-6">
-            "We drive factory-floor efficiency by translating approved shop drawings into exact, zero-error manufacturing data. From tender estimation to site execution, we are your technical integration hub."
-          </p>
+      <div className="container mx-auto px-6 md:px-12 lg:px-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 gap-8 items-center">
+          <div className="space-y-8 order-2 lg:order-1">
+            <h2 className="mb-8 leading-tight">
+              <span className="text-2xl md:text-4xl lg:text-5xl font-black block text-slate-900 tracking-tight leading-[1.1]">Services to Facade Fabricators</span>
+            </h2>
+            <p className="sm:text-xl text-slate-600 leading-relaxed font-medium border-l-4 border-primary pl-6">
+              "We drive factory-floor efficiency by translating approved shop drawings into exact, zero-error manufacturing data. From tender estimation to site execution, we are your technical integration hub."
+            </p>
+          </div>
+          <div className="order-1 lg:order-2">
+            <img src={fabricatorImg} alt="Fabrication Support" className="border border-slate-200 w-full object-cover aspect-video" />
+          </div>
         </div>
-        <div className="order-1 lg:order-2">
-          <img src={fabricatorImg} alt="Fabrication Support" className="border border-slate-200 w-full object-cover aspect-video" />
+
+        <div className="mt-16">
+          <ServiceAccordion items={[
+            {
+              title: "Tender Estimation & Quantity Surveying (QS)",
+              content: "Winning profitable projects requires exact data. We support fabricators during the bidding phase by providing highly accurate preliminary material take-offs and cost estimations, empowering you to submit competitive, risk-free tenders with absolute confidence."
+            },
+            {
+              title: "Comprehensive Shop Drawings & Engineering",
+              content: "We bridge the gap between architectural intent and structural reality. REALITEZA provides fabrication-ready shop drawings rigorously engineered for approval and structural compliance."
+            },
+            {
+              title: "Concept & System Design",
+              content: "Developing initial concept drawings and custom profile designs to establish architectural intent and confirm early constructability."
+            },
+            {
+              title: "Visual & Performance Mockups (VMU & PMU)",
+              content: "Delivering highly detailed fabrication and installation drawings for physical mockups to validate weatherproofing, structural integrity, and client approval prior to mass production."
+            },
+            {
+              title: "System Detailing",
+              content: "Developing highly accurate 1:1 and 1:2 interface details, including die designs and custom extrusions."
+            },
+            {
+              title: "Structural & Thermal Validation",
+              content: "Providing supporting structural calculations and thermal analysis to ensure the system meets all performance criteria before manufacturing begins."
+            },
+            {
+              title: "Approval Acceleration",
+              content: "Delivering clear, comprehensive drawing packages designed to pass consultant reviews quickly and prevent project bottlenecks."
+            },
+            {
+              title: "Fabrication Drawings & Machining Details",
+              content: "We drive factory-floor efficiency by translating approved shop drawings into exact, zero-error manufacturing data."
+            },
+            {
+              title: "Architectural & Secondary Steel Detailing",
+              content: "Complementing our primary superstructure services, REALITEZA provides precise detailing for the critical secondary components that ensure a facility’s safety, accessibility, and operational function. From complex staircases and industrial ladders to railings, embeds, and specialized architectural metalwork, we deliver highly accurate 3D models and 2D fabrication drawings."
+            }
+          ]} />
         </div>
       </div>
 
-      <div>
-        <ServiceAccordion items={[
-          {
-            title: "Pre-Construction Material & Cost Modeling",
-            content: "Providing real-time quantity takeoffs early in the project lifecycle to ensure financial predictability."
-          },
-          {
-            title: "Structural Steel Detailing",
-            content: "Delivering highly precise, clash-free steel detailing engineered for flawless fabrication and fitment."
-          },
-          {
-            title: "Connection Design & PE Stamping",
-            content: "Engineering precise connections to manage forces across complex commercial and industrial projects."
-          },
-          {
-            title: "Tender Estimation & QS",
-            content: "Winning profitable projects requires exact data. We support fabricators during the bidding phase by providing highly accurate preliminary material take-offs and cost estimations."
-          },
-          {
-            title: "Comprehensive Shop Drawings & Engineering",
-            content: "Developing fabrication-ready shop drawings, system detailing (1:1 and 1:2 interface details), and structural validation including die designs and custom extrusions."
-          },
-          {
-            title: "Fabrication Packages Delivery",
-            content: "Precision Fabrication Tickets, direct CNC Data Extraction files, and systematic Assembly & Tagging Plans to ensure fast, foolproof factory assembly."
-          },
-          {
-            title: "Material Optimization & MTO",
-            content: "Extrusion & Cutting Optimization to eliminate waste. Hardware & Accessory BOMs detaliing precise counts for fasteners, gaskets, and sealants."
-          }
-        ]} />
-      </div>
-
-      <div className="bg-slate-50 p-10 md:p-16 border border-slate-200">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="w-full md:w-1/2">
-              <h3 className="text-3xl font-black text-slate-900 mb-6 uppercase tracking-tight leading-tight">
-                Site Execution & <br />Installation Solutions
-              </h3>
-              <p className="text-slate-600 mb-8 leading-relaxed">
-                A flawless factory build must translate seamlessly to the construction site. We provide erection teams with exact spatial data.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Site Survey & Tolerance Integration",
-                  "Coordinate & Bracket Setting-Out",
-                  "Installation Sequencing (Methodologies)",
-                  "Comprehensive As-Built Documentation"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-slate-800 font-bold text-sm uppercase tracking-wide">
-                    <CheckCircle2 className="text-primary" size={18} /> {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="w-full md:w-1/2">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="h-40 bg-slate-200 rounded-3xl animate-pulse"></div>
-                <div className="h-40 bg-slate-300 rounded-3xl animate-pulse"></div>
-                <div className="h-40 bg-slate-300 rounded-3xl animate-pulse"></div>
-                <div className="h-40 bg-slate-200 rounded-3xl animate-pulse"></div>
+      {/* Fabrication & Material Optimization Section - FULL WIDTH */}
+      <div className="py-16 md:py-24 bg-slate-100 ">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="w-full lg:w-1/2 space-y-12">
+              <div>
+                <h3 className="sm:text-3xl text-2xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
+                  Fabrication Packages <br />Delivery
+                </h3>
+                <div className="grid grid-cols-1 gap-6">
+                  {[
+                    { title: "Precision Fabrication Tickets", desc: "Generating individual part drawings (glass, aluminum, steel, and gaskets) complete with precise cutting, drilling, and routing dimensions." },
+                    { title: "CNC Data Extraction", desc: "Providing direct CNC export files tailored to your machining centers to eliminate manual programming errors and accelerate production." },
+                    { title: "Assembly & Tagging Plans", desc: "Creating clear unit-assembly drawings and systematic tagging plans to ensure fast, foolproof glazing and frame assembly in the factory." },
+                    { title: "Extrusion & Cutting Optimization", desc: "Utilizing high-end software to generate precise factory cutting layouts and comprehensive material wastage reports, maximizing bar-length yield and minimizing scrap." },
+                    { title: "Glass & Panel Orders", desc: "Generating exact cutting sizes for glass, ACP, and insulation panels to streamline supplier orders." },
+                    { title: "Hardware & Accessory BOMs", desc: "Detailing precise counts for brackets, fasteners, gaskets, and sealants to ensure your procurement team buys exactly what is needed." }
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">{i + 1}</div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 uppercase tracking-wide text-sm mb-1">{item.title}</h4>
+                        <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <p className="text-[10px] text-slate-400 mt-4 uppercase text-center font-bold tracking-widest">Construction Site Execution Visual Data</p>
+            </div>
+            <div className="w-full lg:w-1/2">
+              <div className="relative">
+                <img src={fabricationPackageImg} alt="Fabrication Packages" className="rounded-2xl shadow-2xl border border-slate-200 relative z-10" />
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-3xl" />
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Site Execution Section */}
+      <div className="container mx-auto px-6 md:px-12 lg:px-20 py-10 md:py-24">
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
+          <div className="w-full lg:w-1/2 space-y-8">
+            <h3 className="sm:text-3xl text-2xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
+              Site Execution & <br />Installation Solutions
+            </h3>
+            <p className="text-slate-600 mb-8 sm:text-xl  leading-relaxed">
+              A flawless factory build must translate seamlessly to the construction site. We provide your erection teams with the exact spatial data and sequencing required for rapid, error-free installation.
+            </p>
+            <div className="space-y-6">
+              {[
+                { title: "Site Survey & Tolerance Integration", desc: "We import physical site survey reports directly into our models to accommodate real-world structural deviations." },
+                { title: "Coordinate & Bracket Setting-Out", desc: "Providing precise global coordinate points and detailed bracket installation drawings to guarantee perfect grid alignment." },
+                { title: "Installation Sequencing", desc: "Providing step-by-step erection methodologies and site-specific tagging maps to accelerate installation." },
+                { title: "As-Built Documentation", desc: "Generating comprehensive final as-built drawings reflecting exact site conditions to guarantee smooth project closeout." }
+              ].map((item, i) => (
+                <div key={i} className="border-l-2 border-primary/20 pl-6 hover:border-primary transition-colors">
+                  <h4 className="font-bold text-slate-900 uppercase tracking-wider text-sm mb-1">{item.title}</h4>
+                  <p className="text-slate-500 text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="w-full lg:w-1/2">
+            <div className="relative group">
+              <img src={siteExecutionImg} alt="Site Execution" className="rounded-2xl shadow-xl grayscale hover:grayscale-0 transition-all duration-700" />
+              <div className="absolute inset-0 bg-primary/5 rounded-2xl group-hover:bg-transparent transition-colors" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Special Services Section */}
+      <section className="py-16 md:py-24 bg-slate-950 text-white overflow-hidden relative">
+        <div className="container mx-auto px-6 md:px-10 lg:px-20 relative z-10">
+          <div className="text-center md:mb-16 mb-8">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-black  tracking-tighter">Services</h2>
+            
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: "Tendering support", content: "We support facade fabrication contractors for producing preliminary tender documents and in making bill of quantity for Project estimation." },
+              { title: "Concept Design", content: "Schematic concept detail development for typical and bespoke systems." },
+              { title: "Shop drawing", content: "Expert façade design and detailed shop drawings inline with client's drawing standards and requirements." },
+              { title: "TEKLA 3D & BIM", content: "Tekla, Solid works, Inventor & Revit support for complex geometry." },
+              { title: "Fabrication drawing", content: "2D & 3D output for CNC machining, complying with different factory standards." },
+              { title: "Material Take-Off", content: "Comprehensive MTO / GTO service for procurement efficiency." },
+              { title: "As-Built Drawing", content: "Final project closeout documentation reflecting site realities." },
+              { title: "Calculations", content: "Structural & Thermal Analysis to ensure performance compliance." },
+              { title: "Third-party drawing QC review", content: "QC Review / comment / approve third party drawing submissions before submitting to your consultant / main contractor. QC review on fabrication drawings before releasing to production." },
+              { title: "Third-party stamping service", content: "Licensed professional engineer (PE) review and approval for structural calculations and drawings to ensure design meets safety standards and building codes." }
+            ].map((service, i) => (
+              <div key={i} className="group sm:p-8 p-4 bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <h4 className="text-primary font-black uppercase tracking-[0.2em] text-xs mb-4">{service.title}</h4>
+                <p className="text-slate-400 group-hover:text-slate-200 transition-colors text-sm leading-relaxed">
+                  {service.content}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Interactive Project List Section */}
-      <section className="relative py-24 bg-white border-t border-slate-100">
-        <div className="container mx-auto px-6">
+      <section className="relative py-16 sm:py-24 bg-white border-t border-slate-100">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 uppercase tracking-tight">Our Technical Portfolio</h2>
-            <p className="text-slate-500 text-lg font-medium max-w-2xl">Explore our diverse range of engineering solutions and technical documentation for facade fabricators.</p>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6  tracking-tight">Our Technical Portfolio</h2>
+            <p className="text-slate-500 sm:text-xl font-medium max-w-2xl">Explore our diverse range of engineering solutions and technical documentation for facade fabricators.</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-
+          {/* Desktop View (>= 1024px): Interactive Slideshow */}
+          <div className="hidden lg:grid grid-cols-2 gap-12 items-start">
             {/* Left Side: Scrollable List with Fade Effects */}
             <div className="relative group/scroll">
               {/* Top Fade */}
@@ -205,7 +286,7 @@ const FabricatorsContent = () => {
             </div>
 
             {/* Right Side: Fixed/Sticky Detail Display */}
-            <div className="hidden lg:block sticky top-32 h-[600px]">
+            <div className="sticky top-32 h-[600px]">
               <div className="relative h-full w-full rounded-[40px] overflow-hidden bg-slate-100 shadow-2xl group/img border border-slate-200">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -230,16 +311,7 @@ const FabricatorsContent = () => {
                         transition={{ delay: 0.3 }}
                         className="space-y-3"
                       >
-                        <div className="flex items-center gap-3">
-                          <div className="h-[2px] w-8 bg-primary" />
-                          <span className="text-primary font-bold uppercase tracking-[0.3em] text-[10px]">
-                            {projects[activeIndex].type}
-                          </span>
-                        </div>
                         <h3 className="text-3xl font-black tracking-tight leading-tight">{projects[activeIndex].title}</h3>
-                        <p className="text-slate-300 text-base leading-relaxed font-medium italic opacity-90">
-                          "{projects[activeIndex].service}"
-                        </p>
                       </motion.div>
                     </div>
                   </motion.div>
@@ -247,13 +319,34 @@ const FabricatorsContent = () => {
               </div>
             </div>
           </div>
+
+          {/* Mobile/Tablet View (< 1024px): 3-Column/2-Column Grid */}
+          <div className="lg:hidden grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            {projects.map((project, i) => (
+              <div key={i} className="group space-y-4">
+                <div className="aspect-video sm:aspect-square overflow-hidden rounded-2xl border border-slate-200 shadow-sm relative">
+                  <img 
+                    src={project.img} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover transition-all duration-700" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-60" />
+                </div>
+                <h3 className="text-[10px] sm:text-sm font-bold text-slate-900 leading-tight uppercase tracking-tight">
+                  {project.title}
+                </h3>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <div className="flex justify-center pt-8">
-        <Link to="/contact" className="btn-primary py-4 px-8 text-lg font-bold">
-          GET ONE-POINT SUPPORT <ArrowRight />
-        </Link>
+      <div className="container mx-auto px-6 md:px-12 lg:px-20 pb-16">
+        <div className="flex justify-center">
+          <Link to="/contact" className="btn-primary  text-lg font-bold">
+            GET ONE-POINT SUPPORT <ArrowRight />
+          </Link>
+        </div>
       </div>
     </div>
   );

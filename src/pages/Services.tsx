@@ -131,21 +131,18 @@ const Services = () => {
 
       {/* Tabbed Content Area */}
       <section className="pt-10 pb-24 lg:pt-24 lg:pb-24 bg-white min-h-[800px]">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -30 }}
-              transition={{ duration: 0.5, ease: "circOut" }}
-            >
-              {renderContent()}
-            </motion.div>
-          </AnimatePresence>
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.5, ease: "circOut" }}
+          >
+            {renderContent()}
+          </motion.div>
+        </AnimatePresence>
       </section>
-
       <ClientSlider />
       <EndClientSlider />
     </div>

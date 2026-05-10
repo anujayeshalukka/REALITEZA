@@ -24,7 +24,7 @@ const DevelopersContent = () => {
   ];
 
   return (
-    <div className="sm:space-y-16 space-y-8">
+    <div className="container mx-auto px-6 md:px-12 lg:px-20 sm:space-y-16 space-y-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 gap-8 items-center">
         <div className="space-y-8">
           <h2 className="mb-8 leading-tight">
@@ -36,10 +36,6 @@ const DevelopersContent = () => {
         </div>
         <div className="relative">
           <img src={devImg} alt="Commercial Development" className="border border-slate-200 w-full object-cover aspect-video lg:aspect-auto lg:h-[400px]" />
-          {/* <div className="absolute -bottom-6 -right-6 bg-slate-900 text-white p-8 border border-white/10 hidden md:block">
-            <p className="text-3xl font-black text-primary mb-1">ROI</p>
-            <p className="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Optimized Budgeting</p>
-          </div> */}
         </div>
       </div>
 
@@ -47,7 +43,7 @@ const DevelopersContent = () => {
         <ServiceAccordion items={developersServices} />
       </div>
 
-      <div className="flex justify-center ">
+      <div className="flex justify-center pb-12">
         <Link to="/contact" className="btn-primary text-md font-bold">
           Engage Engineering Oversight<ArrowRight />
         </Link>
