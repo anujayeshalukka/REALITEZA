@@ -186,11 +186,10 @@ const FabricatorsContent = () => {
       </div>
 
       {/* Special Services Section */}
-      <section className="py-16 md:py-24 bg-slate-950 text-white overflow-hidden relative">
+      <section className="py-16 md:py-24 bg-slate-100 overflow-hidden relative">
         <div className="container mx-auto px-6 md:px-10 lg:px-20 relative z-10">
           <div className="text-center md:mb-16 mb-8">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-black  tracking-tighter">Services</h2>
-            
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-slate-900 tracking-tighter">Services</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -206,9 +205,9 @@ const FabricatorsContent = () => {
               { title: "Third-party drawing QC review", content: "QC Review / comment / approve third party drawing submissions before submitting to your consultant / main contractor. QC review on fabrication drawings before releasing to production." },
               { title: "Third-party stamping service", content: "Licensed professional engineer (PE) review and approval for structural calculations and drawings to ensure design meets safety standards and building codes." }
             ].map((service, i) => (
-              <div key={i} className="group sm:p-8 p-4 bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <div key={i} className="group sm:p-8 p-4 bg-white border border-slate-200 hover:border-primary transition-all duration-300">
                 <h4 className="text-primary font-black uppercase tracking-[0.2em] text-xs mb-4">{service.title}</h4>
-                <p className="text-slate-400 group-hover:text-slate-200 transition-colors text-sm leading-relaxed">
+                <p className="text-slate-600 transition-colors text-sm leading-relaxed">
                   {service.content}
                 </p>
               </div>
