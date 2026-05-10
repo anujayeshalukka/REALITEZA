@@ -125,7 +125,7 @@ const Contact = () => {
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="bg-white border border-slate-200 shadow-xl shadow-slate-200/40 rounded-3xl overflow-hidden">
+            <div className="bg-white  overflow-hidden">
               <div className="p-4 md:p-8">
                 <form className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
                   <div className="space-y-3">

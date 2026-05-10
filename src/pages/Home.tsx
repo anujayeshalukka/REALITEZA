@@ -244,7 +244,7 @@ const Home = () => {
 
 
       {/* CTA Section - Beautified with Background */}
-      <section className="relative py-16 md:py-28 bg-primary overflow-hidden">
+      {/* <section className="relative py-16 md:py-28 bg-primary overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -274,7 +274,7 @@ const Home = () => {
             
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
 
 

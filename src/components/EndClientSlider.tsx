@@ -42,7 +42,7 @@ const EndClientSlider: React.FC = () => {
           style={{ animationDuration: isMobile ? '5s' : '12s' }}
         >
           {[...endClients, ...endClients, ...endClients].map((clientImg, i) => (
-            <div key={i} className="flex-shrink-0 sm:w-48 w-32 sm:h-24 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 cursor-pointer shadow-sm hover:shadow-md group">
+            <div key={i} className="flex-shrink-0 sm:w-48 w-32 sm:h-24 h-16 bg-white border border-slate-100 flex items-center justify-center overflow-hidden transition-all duration-500 cursor-pointer hover:shadow-md group">
               <img src={clientImg} alt={`End Client ${i + 1}`} className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" />
             </div>
           ))}

@@ -58,7 +58,7 @@ const ContractorsContent = () => {
           </div>
         </div>
         <div>
-          <img src={contractorIllustration} alt="Technical Execution Illustration" className="w-full h-auto max-h-[500px] object-contain rounded-2xl shadow-sm" />
+          <img src={contractorIllustration} alt="Technical Execution Illustration" className="w-full h-auto max-h-[500px] object-contain" />
         </div>
       </div>
 

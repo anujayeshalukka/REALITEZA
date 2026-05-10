@@ -66,7 +66,7 @@ const FabricatorsContent = () => {
             </p>
           </div>
           <div className="order-1 lg:order-2">
-            <img src={fabricatorIllustration} alt="Technical Integration Illustration" className="w-full h-auto max-h-[500px] object-contain rounded-2xl shadow-sm" />
+            <img src={fabricatorIllustration} alt="Technical Integration Illustration" className="w-full h-auto max-h-[500px] object-contain" />
           </div>
         </div>
 
@@ -179,7 +179,7 @@ const FabricatorsContent = () => {
           <div className="w-full lg:w-1/2">
             <div className="relative group">
               <img src={siteExecutionImg} alt="Site Execution" className="transition-all duration-700" />
-              <div className="absolute inset-0 bg-primary/5 rounded-2xl group-hover:bg-transparent transition-colors" />
+              <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors" />
             </div>
           </div>
         </div>
@@ -287,7 +287,7 @@ const FabricatorsContent = () => {
 
             {/* Right Side: Fixed/Sticky Detail Display */}
             <div className="sticky top-32 h-[600px]">
-              <div className="relative h-full w-full rounded-[40px] overflow-hidden bg-slate-100 shadow-2xl group/img border border-slate-200">
+              <div className="relative h-full w-full overflow-hidden bg-slate-100 group/img border border-slate-200">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeIndex}
@@ -324,7 +324,7 @@ const FabricatorsContent = () => {
           <div className="lg:hidden grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {projects.map((project, i) => (
               <div key={i} className="group space-y-4">
-                <div className="aspect-video sm:aspect-square overflow-hidden rounded-2xl border border-slate-200 shadow-sm relative">
+                <div className="aspect-video sm:aspect-square overflow-hidden border border-slate-200 relative">
                   <img 
                     src={project.img} 
                     alt={project.title} 

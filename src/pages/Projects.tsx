@@ -56,7 +56,7 @@ const Projects = () => {
   }, [projectsData.length]);
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-slate-100 min-h-screen">
       
       <section className="bg-primary pt-24 pb-12 lg:pt-48 lg:pb-20 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/10 -skew-x-12 transform translate-x-1/4" />
@@ -73,11 +73,11 @@ const Projects = () => {
       </section>
 
       {/* Full View Project Showcase - No Cropping */}
-      <section className="bg-gray-100 py-12 border-y border-slate-100">
+      <section className="py-12">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto flex flex-col">
             {/* Image Container - Flexible to prevent cropping */}
-            <div className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center bg-slate-50 rounded-t-3xl overflow-hidden">
+            <div className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center bg-white overflow-hidden">
               <img 
                 key={activeIndex}
                 src={(isMobile && (projectsData[activeIndex] as any).mobImg) ? (projectsData[activeIndex] as any).mobImg : projectsData[activeIndex].img} 
@@ -87,7 +87,7 @@ const Projects = () => {
             </div>
 
             {/* Info Bar - Positioned just below the image */}
-            <div className="bg-primary py-6 px-8 md:px-12 rounded-b-3xl text-white shadow-xl">
+            <div className="bg-primary py-6 px-8 md:px-12  text-white ">
               <div className="flex flex-wrap items-center justify-between gap-6">
                 <div className="flex flex-wrap items-center gap-x-12 gap-y-4">
                   <div className="flex flex-col">
