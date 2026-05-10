@@ -5,7 +5,7 @@ import {
   ArrowRight, ArrowUpRight
 } from 'lucide-react';
 import ServiceAccordion from './ServiceAccordion';
-import fabricatorImg from '../../assets/factory-cnc.png';
+import fabricatorIllustration from '../../assets/services/fabricators_integration.png';
 import fabricationPackageImg from '../../assets/services/fabrication_package.png';
 import siteExecutionImg from '../../assets/services/site_execution.png';
 
@@ -66,7 +66,7 @@ const FabricatorsContent = () => {
             </p>
           </div>
           <div className="order-1 lg:order-2">
-            <img src={fabricatorImg} alt="Fabrication Support" className="border border-slate-200 w-full object-cover aspect-video" />
+            <img src={fabricatorIllustration} alt="Technical Integration Illustration" className="w-full h-auto max-h-[500px] object-contain rounded-2xl shadow-sm" />
           </div>
         </div>
 
@@ -119,7 +119,7 @@ const FabricatorsContent = () => {
             <div className="w-full lg:w-1/2 space-y-12">
               <div>
                 <h3 className="sm:text-3xl text-2xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
-                  Fabrication Packages <br />Delivery
+                  Fabrication Packages Delivery
                 </h3>
                 <div className="grid grid-cols-1 gap-6">
                   {[
@@ -143,7 +143,7 @@ const FabricatorsContent = () => {
             </div>
             <div className="w-full lg:w-1/2">
               <div className="relative">
-                <img src={fabricationPackageImg} alt="Fabrication Packages" className="rounded-2xl shadow-2xl border border-slate-200 relative z-10" />
+                <img src={fabricationPackageImg} alt="Fabrication Packages" className="  relative z-10" />
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-3xl" />
                 <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
               </div>
