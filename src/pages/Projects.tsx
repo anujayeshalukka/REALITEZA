@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+
 import project1 from '../assets/projects/project1.jpg';
 import project2 from '../assets/projects/project2.jpg';
 import project3 from '../assets/projects/project3.jpg';
@@ -113,36 +112,7 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Call to Action Footer Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">
-              Looking for a specialized <br />
-              <span className="text-primary">technical engineering partner?</span>
-            </h2>
-            <p className="text-slate-500 text-lg mb-12 font-medium">
-              We provide zero-error drawings and high-fidelity BIM models for complex facade systems across the globe.
-            </p>
-
-             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-            >
-              <Link to="/contact" className="btn-primary">
-                 Start Your Project Consultation <ArrowRight size={22} />
-              </Link>
-            </motion.div>  
-
-          </motion.div>
-        </div>
-      </section>
+     
     </div>
   );
 };
