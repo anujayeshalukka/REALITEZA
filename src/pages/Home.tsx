@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Shield, Zap, Globe } from 'lucide-react';
+import { ArrowRight} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import logoabout from '../assets/aboutrealiteza.png';
@@ -39,22 +39,7 @@ const Home = () => {
               </span>
             </h1>
 
-            {/* Contact Info Row */}
-            {/* <div className="flex flex-col md:flex-row items-end md:items-center justify-end gap-3 md:gap-6 text-white/90 text-sm md:text-base font-medium mt-2 sm:mt-4">
-              <a href="mailto:contact@realiteza.com" className="flex items-center gap-3 hover:text-primary transition-all group">
-                <div className="p-2 bg-white/10 rounded-full flex items-center justify-center border border-white/10 group-hover:bg-white/20 transition-all">
-                  <Mail size={18} className="text-primary" />
-                </div>
-                <span className="group-hover:translate-x-0.5 transition-transform">contact@realiteza.com</span>
-              </a>
-              <div className="hidden md:block w-px h-4 bg-white/50" />
-              <a href="tel:+919447460468" className="flex items-center gap-3 hover:text-primary transition-all group">
-                <div className="p-2 bg-white/10 rounded-full flex items-center justify-center border border-white/10 group-hover:bg-white/20 transition-all">
-                  <Phone size={18} className="text-primary" />
-                </div>
-                <span className="group-hover:translate-x-0.5 transition-transform">+91 9447460468</span>
-              </a>
-            </div> */}
+        
           </motion.div>
         </div>
       </section>
@@ -62,58 +47,43 @@ const Home = () => {
       {/* Intro Section */}
       <section className="py-16 md:py-28 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          {/* Centered Heading */}
-          {/* <div className="text-center mb-20">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-8 leading-tight"
-            >
-              <span className="text-2xl md:text-4xl lg:text-5xl font-bold block text-slate-900 tracking-tight">
-                About Realiteza
-              </span>
-            </motion.h2>
-          </div> */}
+         
 
           {/* 2-Column Content Below */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-16 items-center max-w-6xl mx-auto">
-            {/* Logo Column */}
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 max-w-6xl mx-auto">
+            {/* Logo */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex justify-center lg:justify-end"
+              className="flex-shrink-0"
             >
               <img src={logoabout} alt="REALITEZA Logo" className="h-24 md:h-32 w-auto object-contain" />
             </motion.div>
 
             {/* Content Column */}
-            <div className="lg:col-span-2 text-left">
+            <div className="flex-1 max-w-2xl">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className=" text-lg font-medium leading-relaxed text-slate-700"
+                className="text-lg font-medium leading-relaxed text-slate-700 mb-6"
               >
                 REALITEZA Building Envelope Engineering Services provides specialized design and engineering support for building envelope systems, façade detailing, BIM modeling, fabrication drawings, and structural design support for clients across the world.
               </motion.p>
 
-
-              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="flex justify-end"
+              >
+                <Link to="/services" className="btn-primary">
+                  View All Services <ArrowRight size={22} />
+                </Link>
+              </motion.div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="flex lg:justify-end justify-center lg:col-span-3 mt-4"
-            >
-              <Link to="/services" className="btn-primary">
-                View All Services <ArrowRight size={22} />
-              </Link>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -124,7 +94,7 @@ const Home = () => {
 
 
       {/* Why Choose Us */}
-      <section className="py-16 md:py-28 relative">
+      <section className="pb-16 md:pb-28  relative">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <div className="text-center sm:mb-20 mb-10">
             <motion.h2
@@ -136,24 +106,29 @@ const Home = () => {
               <span className="text-2xl md:text-4xl lg:text-5xl font-bold block text-slate-900 tracking-tight">
                 Why Choose REALITEZA
               </span>
+              <p className='mt-6 text-lg font-normal max-w-5xl mx-auto text-slate-600 leading-relaxed text-center'>
+                A True Dedicated Partner
+                We don't just execute drafting tasks; we take complete ownership of the facade package. By integrating seamlessly with your team from day one, we act as your dedicated technical arm, fiercely protecting your vision, budget, and timeline.
+              </p>
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
-              { icon: <Shield size={28} />, title: 'Premium Standards', text: 'We maintain high-quality drawing standards and high-end engineered solutions.' },
-              { icon: <Zap size={28} />, title: 'Efficiency', text: 'Remote-efficient engineering back-office services that save time and costs.' },
-              { icon: <Globe size={28} />, title: 'Global Reach', text: 'Supporting fabrication companies, architects, and contractors across the world.' }
-            ].map((feature) => (
+              "Comprehensive Risk Mitigation: The facade is often the highest-risk, highest-cost package on any project. We provide the authoritative oversight necessary to eliminate that risk, ensuring your building is secure, compliant, and built to last.",
+              "Our intelligent material optimization, exact quantity forecasting, and value engineering drastically reduce waste and prevent costly procurement shortages.",
+              "End-to-End Coordination: We serve as your dedicated technical authority. By managing the critical transition between the primary building structure and the facade envelope, we ensure a perfect, weather-tight fit every single time.",
+              "Unwavering Financial Certainty: Construction is inherently unpredictable, but your envelope budget shouldn't be. Our proactive, systems-driven approach identifies risks early, eliminating hidden costs, material waste, and the threat of expensive on-site rework."
+            ].map((text, index) => (
               <motion.div
-                key={feature.title}
-                className="bg-white sm:p-10 px-6 py-4 border border-slate-200 transition-all"
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white p-4 sm:p-6 border border-slate-200"
               >
-                <div className="flex items-center gap-4 sm:mb-6 mb-4">
-                  <div className="text-primary flex-shrink-0 p-3 bg-primary/5 rounded-xl">{feature.icon}</div>
-                  <h3 className="text-xl font-bold text-slate-900 leading-tight">{feature.title}</h3>
-                </div>
-                <p className="text-slate-600 leading-relaxed">{feature.text}</p>
+                <p className="text-slate-600 leading-relaxed text-md md:text-lg">{text}</p>
               </motion.div>
             ))}
           </div>

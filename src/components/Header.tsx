@@ -35,7 +35,7 @@ const Header = () => {
   }, [isOpen]);
 
   // Determine logo to show
-  const currentLogo = isOpen ? logoWhite : (isScrolled ? logoColor : logoWhite);
+  const currentLogo = isOpen ? logoWhite : (isScrolled ? logoColor : (location.pathname !== '/' ? logoWhite : logoWhite));
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -85,9 +85,12 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled
-          ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200 py-2 shadow-sm'
-          : `bg-transparent py-10 ${location.pathname !== '/' ? 'border-b border-white/10' : ''}`
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
+          isScrolled
+            ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200 py-2 shadow-sm'
+            : (location.pathname !== '/'
+              ? 'bg-primary py-4 border-b border-white/10 shadow-lg'
+              : 'bg-transparent py-10')
           } ${isOpen ? 'bg-transparent border-transparent shadow-none' : ''}`}
       >
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
@@ -97,7 +100,8 @@ const Header = () => {
               <img
                 src={currentLogo}
                 alt="REALITEZA Logo"
-                className={`w-auto object-contain transition-all duration-500 ${isScrolled ? 'h-14 md:h-16' : 'h-16 md:h-18'
+                className={`w-auto object-contain transition-all duration-500 ${
+                  isScrolled || location.pathname !== '/' ? 'h-12 md:h-14' : 'h-14 md:h-16'
                   }`}
               />
             </Link>
@@ -112,8 +116,12 @@ const Header = () => {
                   <X size={32} strokeWidth={1.5} className="text-white" />
                 ) : (
                   <div className="flex flex-col gap-2.5 items-end">
-                    <div className={`w-10 h-[3px] transition-colors duration-500 ${isScrolled ? 'bg-slate-900' : 'bg-white'}`}></div>
-                    <div className={`w-7 h-[3px] transition-colors duration-500 ${isScrolled ? 'bg-slate-900' : 'bg-white'}`}></div>
+                    <div className={`w-10 h-[3px] transition-colors duration-500 ${
+                      isScrolled ? 'bg-slate-900' : 'bg-white'
+                    }`}></div>
+                    <div className={`w-7 h-[3px] transition-colors duration-500 ${
+                      isScrolled ? 'bg-slate-900' : 'bg-white'
+                    }`}></div>
                   </div>
                 )}
               </div>

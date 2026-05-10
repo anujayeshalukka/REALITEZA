@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-16 md:pb-8 pb-32">
+    <footer className="bg-[#1F487C] text-slate-300 pt-16 md:pb-8 pb-32">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
@@ -67,27 +67,27 @@ const Footer = () => {
             <ul className="space-y-6">
               <li className="flex items-center gap-4 group">
                 <div className="p-2.5 bg-white/5 rounded-full flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300">
-                  <Mail size={18} className="text-primary" />
+                  <Mail size={18} className="text-white" />
                 </div>
                 <a href="mailto:contact@realiteza.com" className="hover:text-white transition-colors">contact@realiteza.com</a>
               </li>
               <li className="flex items-center gap-4 group">
                 <div className="p-2.5 bg-white/5 rounded-full flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300">
-                  <Phone size={18} className="text-primary" />
+                  <Phone size={18} className="text-white" />
                 </div>
                 <a href="tel:+919447460468" className="hover:text-white transition-colors">+91 9447460468</a>
               </li>
               <li className="flex items-center gap-4 group">
                 <div className="p-2.5 bg-white/5 rounded-full flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300">
-                  <MapPin size={18} className="text-primary" />
+                  <MapPin size={18} className="text-white" />
                 </div>
-                <span className="text-sm">Kakkanad, Cochin, India</span>
+                <span className="text-sm text-slate-300">Kakkanad, Cochin, India</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
           <p>© {currentYear} REALITEZA Building Envelope Engineering Service – All Rights Reserved.</p>
           <p>Developer: REALITEZA BEES PVT LTD, Cochin, India.</p>
         </div>

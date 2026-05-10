@@ -29,24 +29,16 @@ const Contact = () => {
 
   return (
     <div>
-      {/* Page Header */}
-      <section className="bg-primary pt-24 pb-12 lg:pt-48 lg:pb-20 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 -skew-x-12 transform translate-x-1/4" />
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+      {/* Global Offices Grid */}
+      <section className="pt-24 md:pt-32 pb-16 md:pb-28 bg-white">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <motion.h1
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-12"
           >
             Contact Us
           </motion.h1>
-
-        </div>
-      </section>
-
-      {/* Global Offices Grid */}
-      <section className="py-16 md:py-28 bg-white">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {offices.map((office, i) => (
               <motion.div

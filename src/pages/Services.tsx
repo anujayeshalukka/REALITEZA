@@ -52,22 +52,16 @@ const Services = () => {
 
   return (
     <div className="overflow-hidden">
-      {/* Hero Section */}
-      <section className="bg-primary pt-24 pb-12 lg:pt-48 lg:pb-32 text-white relative">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+      {/* Audience Tabs Navigation */}
+      <section id="services-content" className="pt-24 md:pt-32 pb-6 bg-white lg:shadow-none">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <motion.h1 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-2xl md:text-4xl lg:text-5xl font-extrabold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-2xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-slate-900 tracking-tight"
           >
             Our Services
           </motion.h1>
-        </div>
-      </section>
-
-      {/* Audience Tabs Navigation */}
-      <section id="services-content" className="sticky top-12 z-[40] bg-white border-b border-slate-100 shadow-sm lg:shadow-none">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
           
           {/* Mobile Dropdown View */}
           <div className="lg:hidden py-4">

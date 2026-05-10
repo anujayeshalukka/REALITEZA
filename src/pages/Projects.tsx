@@ -58,23 +58,16 @@ const Projects = () => {
   return (
     <div className="bg-slate-100 min-h-screen">
       
-      <section className="bg-primary pt-24 pb-12 lg:pt-48 lg:pb-20 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/10 -skew-x-12 transform translate-x-1/4" />
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+      {/* Full View Project Showcase */}
+      <section className="pt-24 md:pt-32 pb-12">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <motion.h1
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-12"
           >
             Recent Projects
           </motion.h1>
-
-        </div>
-      </section>
-
-      {/* Full View Project Showcase - No Cropping */}
-      <section className="py-12">
-        <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto flex flex-col">
             {/* Image Container - Flexible to prevent cropping */}
             <div className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center bg-white overflow-hidden">

@@ -4,24 +4,17 @@ import aboutImg from '../assets/aboutrealiteza.png';
 const About = () => {
   return (
     <div>
-      {/* Page Header */}
-      <section className="bg-primary pt-24 pb-12 lg:pt-48 lg:pb-20 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/10 -skew-x-12 transform translate-x-1/4" />
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+      {/* Overview Section */}
+      <section className="pt-24 md:pt-32 pb-16 md:pb-28 bg-white">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <motion.h1
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-12"
           >
             About Us
           </motion.h1>
-          
-        </div>
-      </section>
 
-      {/* Overview */}
-      <section className="py-16 md:py-28 bg-white">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
             <div className="lg:col-span-2 space-y-6">
               {/* <h2 className="mb-8 leading-tight">

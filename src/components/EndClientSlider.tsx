@@ -28,7 +28,7 @@ const EndClientSlider: React.FC = () => {
       <div className="container mx-auto px-6 md:px-12 lg:px-20 mb-8">
         <div className="sm:text-center  max-w-3xl mx-auto">
           
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-6">
+          <h2 className="text-2xl uppercase font-bold text-slate-900 tracking-tight mb-6">
             End Clients & Associated Projects
           </h2>
           

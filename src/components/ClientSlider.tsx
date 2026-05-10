@@ -13,7 +13,7 @@ const ClientSlider: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12 items-center">
           {/* Left Column: Heading */}
           <div className="lg:col-span-1">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
+            <h2 className="text-2xl uppercase font-bold text-slate-900 tracking-tight">
               Our Clients
             </h2>
           </div>
