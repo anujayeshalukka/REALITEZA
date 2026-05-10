@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Logo: React.FC<{ className?: string; isDark?: boolean }> = ({ className = "h-12", isDark = false }) => {
-  const color = isDark ? "#47689D" : "#FFFFFF";
+  const color = isDark ? "#1F487C" : "#FFFFFF";
 
   return (
     <svg
