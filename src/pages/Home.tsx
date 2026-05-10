@@ -99,106 +99,27 @@ const Home = () => {
               >
                 REALITEZA Building Envelope Engineering Services provides specialized design and engineering support for building envelope systems, façade detailing, BIM modeling, fabrication drawings, and structural design support for clients across the world.
               </motion.p>
+
+
+              
             </div>
-          </div>
-        </div>
-      </section>
 
-
-      {/* Featured Services Preview - Beautified */}
-      <section className="py-16 md:py-28 bg-slate-100 relative overflow-hidden">
-        {/* Subtle background text for architectural feel */}
-        {/* <div className="absolute -bottom-20 -right-20 text-[250px] font-black text-slate-100/50 select-none pointer-events-none z-0 tracking-tighter">
-          REALITEZA
-        </div> */}
-
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-          <div className="flex flex-col lg:flex-row justify-between items-end sm:mb-20 mb-10 gap-8 lg:text-left">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="max-w-2xl"
-            >
-              <h2 className="sm:mb-6 mb-4 leading-tight">
-                <span className="text-2xl md:text-4xl lg:text-5xl font-bold block text-slate-900 tracking-tight">
-                  Featured Services
-                </span>
-              </h2>
-              <p className="text-slate-500 text-lg font-medium">
-                Comprehensive engineering support for the building skin, from conceptual design to final fabrication drawings.
-              </p>
-            </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
+              className="flex lg:justify-end justify-center"
             >
               <Link to="/services" className="btn-primary">
                 View All Services <ArrowRight size={22} />
               </Link>
             </motion.div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              {
-                title: 'Developers',
-                desc: 'Engineering Oversight',
-                longDesc: 'Safeguarding investments through technical design audits and value engineering oversight.',
-
-              },
-              {
-                title: 'Architects',
-                desc: 'Concept & BIM Detail',
-                longDesc: 'Translating complex design intent into high-fidelity BIM models and schematic proposals.',
-
-              },
-              {
-                title: 'Contractors',
-                desc: 'Shop & As-Built Support',
-                longDesc: 'Delivering zero-error shop drawings and comprehensive as-built documentation.',
-
-              },
-              {
-                title: 'Fabricators',
-                desc: 'CNC & Manufacturing Data',
-                longDesc: 'Providing precision CNC extraction data and fabrication-ready shop drawings.',
-
-              }
-            ].map((service) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                viewport={{ once: true }}
-                className="group relative bg-white p-8 border border-slate-200 hover:border-primary transition-all duration-300"
-              >
-                <div className="flex flex-col gap-6">
-
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-1 tracking-tight group-hover:text-primary transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-primary font-bold text-xs uppercase tracking-widest">
-                      {service.desc}
-                    </p>
-                  </div>
-                </div>
-
-                <p className="text-slate-600  leading-relaxed my-6">
-                  {service.longDesc}
-                </p>
-
-                <Link to="/services" className="btn-primary text-xs">
-                  Learn More
-                </Link>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
+
+
+     
 
 
 
