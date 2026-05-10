@@ -43,7 +43,7 @@ const ArchitectsContent = () => {
         <ServiceAccordion items={architectsServices} />
       </div>
 
-      <div className="flex justify-center pt-8 pb-12">
+      <div className="flex justify-center pt-8">
         <Link to="/contact" className="btn-primary text-md font-bold">
           REQUEST A SCHEMATIC PROPOSAL <ArrowRight />
         </Link>

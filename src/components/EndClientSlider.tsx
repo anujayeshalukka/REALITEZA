@@ -24,9 +24,9 @@ const EndClientSlider: React.FC = () => {
   }, []);
 
   return (
-    <section className="sm:py-24 py-16 bg-white overflow-hidden border-t border-slate-200">
+    <section className="sm:py-24 py-16 overflow-hidden ">
       <div className="container mx-auto px-6 md:px-12 lg:px-20 mb-8">
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="sm:text-center  max-w-3xl mx-auto">
           
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-6">
             End Clients & Associated Projects
@@ -37,28 +37,32 @@ const EndClientSlider: React.FC = () => {
 
       {/* Infinite Scroll Slider */}
       <div className="relative">
-        {/* Note: we adjust animation duration based on having 9 items to maintain a nice speed */}
         <div 
-          className="flex sm:space-x-10 space-x-6 whitespace-nowrap animate-infinite-scroll py-2 items-center will-change-transform hover:[animation-play-state:paused]" 
-          style={{ animationDuration: isMobile ? '15s' : '30s' }}
+          className="flex sm:space-x-4 space-x-2 whitespace-nowrap animate-infinite-scroll-tripled py-2 items-center will-change-transform hover:[animation-play-state:paused]" 
+          style={{ animationDuration: isMobile ? '5s' : '12s' }}
         >
-          {endClients.map((clientImg, i) => (
-            <div key={i} className="flex-shrink-0 sm:w-48 w-32 sm:h-20 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center px-4 py-1 transition-all duration-500 cursor-pointer shadow-sm hover:shadow-md group">
-              <img src={clientImg} alt={`End Client ${i + 1}`} className="max-w-full max-h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" />
-            </div>
-          ))}
-          {/* Duplicate for seamless loop */}
-          {endClients.map((clientImg, i) => (
-            <div key={`dup-${i}`} className="flex-shrink-0 sm:w-48 w-32 sm:h-20 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center px-4 py-1 transition-all duration-500 cursor-pointer shadow-sm hover:shadow-md group">
-              <img src={clientImg} alt={`End Client ${i + 1}`} className="max-w-full max-h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" />
+          {[...endClients, ...endClients, ...endClients].map((clientImg, i) => (
+            <div key={i} className="flex-shrink-0 sm:w-48 w-32 sm:h-24 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 cursor-pointer shadow-sm hover:shadow-md group">
+              <img src={clientImg} alt={`End Client ${i + 1}`} className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" />
             </div>
           ))}
         </div>
         
         {/* Faded edges */}
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
+        <div className="hidden sm:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-100 to-transparent z-10 pointer-events-none" />
+        <div className="hidden sm:block absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-100 to-transparent z-10 pointer-events-none" />
       </div>
+      
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        @keyframes infinite-scroll-tripled {
+          from { transform: translateX(0); }
+          to { transform: translateX(-33.333%); }
+        }
+        .animate-infinite-scroll-tripled {
+          animation: infinite-scroll-tripled linear infinite;
+        }
+      `}} />
     </section>
   );
 };

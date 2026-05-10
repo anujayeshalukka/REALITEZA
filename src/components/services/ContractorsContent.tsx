@@ -78,7 +78,7 @@ const ContractorsContent = () => {
         <ServiceAccordion items={structuralServices} />
       </div>
 
-      <div className="flex justify-center pb-12">
+      <div className="flex justify-center ">
         <Link to="/contact" className="btn-primary text-md font-bold">
           HIRE YOUR FACADE SUPPORT <ArrowRight />
         </Link>
