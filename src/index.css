@@ -1,34 +1,28 @@
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
-@font-face {
-  font-family: "Indigo Outline";
-  src: url("./assets/logofont/Indigo-Outline-Font-Regular.ttf.eot");
-  src: url("./assets/logofont/Indigo-Outline-Font-Regular.ttf.eot?#iefix") format("embedded-opentype"),
-    url("./assets/logofont/Indigo-Outline-Font-Regular.ttf.svg#Indigo Outline") format("svg");
-}
+@layer base {
+  @font-face {
+    font-family: "Indigo Outline";
+    src: url("./assets/logofont/Indigo-Outline-Font-Regular.ttf.eot");
+    src: url("./assets/logofont/Indigo-Outline-Font-Regular.ttf.eot?#iefix") format("embedded-opentype"),
+      url("./assets/logofont/Indigo-Outline-Font-Regular.ttf.svg#Indigo Outline") format("svg");
+  }
 
-@import "tailwindcss";
+  body {
+    @apply font-sans text-slate-900 bg-white antialiased overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
 
 @theme {
   --color-primary: #47689D;
   --color-secondary: #1E293B;
   --color-accent: #64748B;
   --font-sans: 'Montserrat', 'Inter', system-ui, -apple-system, sans-serif;
-}
-
-@layer base {
-  body {
-    @apply font-sans text-slate-900 bg-white antialiased overflow-x-hidden;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-bold tracking-tight;
-  }
 }
 
 @layer components {

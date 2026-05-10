@@ -70,7 +70,7 @@ const About = () => {
               className="space-y-6"
             >
               <h2 className="text-xl font-bold text-slate-900 tracking-tight">Our Mission</h2>
-              <p className="text-xl leading-relaxed text-slate-600 font-medium border-l-4 border-primary pl-6">
+              <p className="sm:text-xl text-lg leading-relaxed text-slate-600 font-medium border-l-4 border-primary pl-6">
                 "To be the leader and our clients' most preferable choice in providing engineering design service."
               </p>
             </motion.div>
@@ -84,7 +84,7 @@ const About = () => {
               className="space-y-6"
             >
               <h2 className="text-xl font-bold text-slate-900 tracking-tight">Our Vision</h2>
-              <p className="text-xl leading-relaxed text-slate-600 font-medium border-l-4 border-primary pl-6">
+              <p className="sm:text-xl text-lg leading-relaxed text-slate-600 font-medium border-l-4 border-primary pl-6">
                 "We are committed to maintaining high-quality drawing standards and high-end engineered building envelope solutions."
               </p>
             </motion.div>

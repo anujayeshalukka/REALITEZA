@@ -198,20 +198,20 @@ const Header = () => {
                 </div>
 
                 {/* Contact Info / Footer in Menu */}
-                <motion.div variants={itemVariants} className="hidden lg:flex flex-col gap-12 border-l border-white/10 pl-24">
+                <motion.div variants={itemVariants} className="flex flex-col gap-10 lg:gap-12 border-t lg:border-t-0 lg:border-l border-white/10 pt-10 lg:pt-0 lg:pl-24 mt-4 lg:mt-0">
                   <div className="space-y-2">
-                    <p className="text-white/40 font-bold uppercase tracking-widest text-xs">Headquarters</p>
+                    <p className="text-white/40 font-bold uppercase tracking-widest text-xs">Locations</p>
                     <p className="text-white text-lg leading-relaxed font-medium">
-                      Realiteza Global Engineering<br />
-                      Technical Excellence Center<br />
-                      Middle East | India | Europe
+                      Realiteza Building Envelope Engineering Services Private Limited<br />
+                      
+                      UAE | IND | UK
                     </p>
                   </div>
 
                   <div className="space-y-2">
                     <p className="text-white/40 font-bold uppercase tracking-widest text-xs">Communication</p>
-                    <a href="mailto:info@realiteza.com" className="block text-xl text-white font-bold hover:text-white transition-colors">info@realiteza.com</a>
-                    <a href="tel:+919876543210" className="block text-xl text-white font-bold hover:text-white transition-colors">+91 987 654 3210</a>
+                    <a href="mailto:contact@realiteza.com" className="block text-xl text-white font-bold hover:text-white transition-colors">contact@realiteza.com</a>
+                    <a href="tel:+919447460468" className="block text-xl text-white font-bold hover:text-white transition-colors">+91 944 746 0468</a>
                   </div>
 
                   <div className="flex gap-6 pt-6">

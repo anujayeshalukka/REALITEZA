@@ -18,9 +18,9 @@ const Home = () => {
             allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
           ></iframe>
-          {/* Blueish Multiply Overlay */}
-          <div className="absolute inset-0 bg-[#47689D]/30 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#1e3a8a]/20 via-transparent to-[#f59e0b]/20 mix-blend-soft-light" />
+          {/* Warmer Multiply Overlay */}
+          <div className="absolute inset-0 bg-slate-900/40 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#f59e0b]/10 via-transparent to-[#f59e0b]/30 mix-blend-soft-light" />
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-15 relative z-10 text-center text-white">

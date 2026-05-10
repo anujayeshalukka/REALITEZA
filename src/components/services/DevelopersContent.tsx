@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import ServiceAccordion from './ServiceAccordion';
-import devImg from '../../assets/developers.jpg';
+import devIllustration from '../../assets/services/developers_oversight.png';
 
 const DevelopersContent = () => {
   const developersServices = [
@@ -35,7 +35,7 @@ const DevelopersContent = () => {
           </p>
         </div>
         <div className="relative">
-          <img src={devImg} alt="Commercial Development" className="border border-slate-200 w-full object-cover aspect-video lg:aspect-auto lg:h-[400px]" />
+          <img src={devIllustration} alt="Engineering Oversight Illustration" className="w-full h-auto object-contain rounded-2xl shadow-sm" />
         </div>
       </div>
 
