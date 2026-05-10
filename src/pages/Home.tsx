@@ -34,7 +34,7 @@ const Home = () => {
               <span className="text-2xl md:text-4xl lg:text-5xl font-bold block text-white tracking-tight">
                 The Building Skin Detailer<br />
                 <span className='text-[10px] md:text-xl font-medium block mb-2 mt-2 text-white uppercase tracking-[0.2em]'>Literally,
-                  <span className='font-extrabold  '>Realiteza</span> realizes
+                  <span className='font-extrabold  '>REALITEZA</span> realizes
                   Your design intent.</span>
               </span>
             </h1>
@@ -85,7 +85,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="flex justify-center lg:justify-end"
             >
-              <img src={logoabout} alt="Realiteza Logo" className="h-24 md:h-32 w-auto object-contain" />
+              <img src={logoabout} alt="REALITEZA Logo" className="h-24 md:h-32 w-auto object-contain" />
             </motion.div>
 
             {/* Content Column */}
@@ -213,7 +213,7 @@ const Home = () => {
               className="sm:mb-6 mb-4 leading-tight"
             >
               <span className="text-2xl md:text-4xl lg:text-5xl font-bold block text-slate-900 tracking-tight">
-                Why Choose Realiteza
+                Why Choose REALITEZA
               </span>
             </motion.h2>
           </div>

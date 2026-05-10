@@ -34,7 +34,7 @@ const Careers = () => {
               </h2>
               
               <p className="text-slate-600 text-lg md:text-xl font-medium leading-relaxed mb-12 max-w-2xl mx-auto">
-                Realiteza is always looking for exceptional experts to join our global team.
+                REALITEZA is always looking for exceptional experts to join our global team.
               </p>
 
               <div className="pt-5 ">

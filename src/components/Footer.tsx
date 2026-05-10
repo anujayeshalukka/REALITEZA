@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="inline-block">
-              <img src={logoImg} alt="Realiteza Logo" className="h-12 w-auto object-contain" />
+              <img src={logoImg} alt="REALITEZA Logo" className="h-12 w-auto object-contain" />
             </Link>
             <p className="text-sm leading-relaxed max-w-xs">
               REALITEZA provides specialized design and engineering support for building envelope systems, façade detailing, BIM modeling, and structural design support globally.
