@@ -206,8 +206,8 @@ const FabricatorsContent = () => {
               { title: "Third-party stamping service", content: "Licensed professional engineer (PE) review and approval for structural calculations and drawings to ensure design meets safety standards and building codes." }
             ].map((service, i) => (
               <div key={i} className="group sm:p-8 p-4 bg-white border border-slate-200 hover:border-primary transition-all duration-300">
-                <h4 className="text-primary font-black uppercase tracking-[0.2em] text-xs mb-4">{service.title}</h4>
-                <p className="text-slate-600 transition-colors text-sm leading-relaxed">
+                <h4 className="font-bold uppercase text-sm mb-4">{service.title}</h4>
+                <p className="text-slate-600 transition-colors text-md leading-relaxed">
                   {service.content}
                 </p>
               </div>
