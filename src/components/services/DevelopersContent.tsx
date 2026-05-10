@@ -35,7 +35,7 @@ const DevelopersContent = () => {
           </p>
         </div>
         <div className="relative">
-          <img src={devIllustration} alt="Engineering Oversight Illustration" className="w-full h-auto max-h-[500px] object-contain rounded-2xl shadow-sm" />
+          <img src={devIllustration} alt="Engineering Oversight Illustration" className="w-full h-auto max-h-[500px] object-contain" />
         </div>
       </div>
 

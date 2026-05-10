@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import ServiceAccordion from './ServiceAccordion';
-import archImg from '../../assets/architect.jpg';
+import archIllustration from '../../assets/services/architects_bridge.png';
 
 const ArchitectsContent = () => {
   const architectsServices = [
@@ -35,7 +35,7 @@ const ArchitectsContent = () => {
           </p>
         </div>
         <div className="order-1 lg:order-2">
-          <img src={archImg} alt="BIM Modeling" className="border border-slate-200 w-full object-cover aspect-video lg:aspect-auto lg:h-[450px]" />
+          <img src={archIllustration} alt="Architectural Engineering Illustration" className="w-full h-auto max-h-[500px] object-contain rounded-2xl shadow-sm" />
         </div>
       </div>
 
