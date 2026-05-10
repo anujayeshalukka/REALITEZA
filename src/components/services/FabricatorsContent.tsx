@@ -157,7 +157,7 @@ const FabricatorsContent = () => {
         <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
           <div className="w-full lg:w-1/2 space-y-8">
             <h3 className="sm:text-3xl text-2xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
-              Site Execution & <br />Installation Solutions
+              Site Execution & Installation Solutions
             </h3>
             <p className="text-slate-600 mb-8 sm:text-xl  leading-relaxed">
               A flawless factory build must translate seamlessly to the construction site. We provide your erection teams with the exact spatial data and sequencing required for rapid, error-free installation.
@@ -178,7 +178,7 @@ const FabricatorsContent = () => {
           </div>
           <div className="w-full lg:w-1/2">
             <div className="relative group">
-              <img src={siteExecutionImg} alt="Site Execution" className="rounded-2xl shadow-xl grayscale hover:grayscale-0 transition-all duration-700" />
+              <img src={siteExecutionImg} alt="Site Execution" className="transition-all duration-700" />
               <div className="absolute inset-0 bg-primary/5 rounded-2xl group-hover:bg-transparent transition-colors" />
             </div>
           </div>
