@@ -26,6 +26,10 @@ const About = () => {
               <p className="text-lg text-slate-600 leading-relaxed">
                 The founders decided to begin the REALITEZA for offering entire engineering service for a Project’s envelop system related scope instead of a specific element like (only) the alum & glazing façade. The entire process is led by enthusiastic and enterprising highly experienced façade experts. This ensures less effort for our clients who take over the entire envelope scope of a building and outsource the design & engineering part ranging from concept to as built stage.
               </p>
+
+              <p className="text-lg text-slate-600 leading-relaxed">
+              We work hand in hand with our clients for producing the design & engineering submissions of various trade / disciplines in the contract like all kind of Aluminium & glazing façades and bespoke systems, Stone and metal cladding facades, Temporary wall, rainscreen & SFS system, Steel Roofing structure and roof cladding designs, and all types of stainless steel and metal works scenarios and canopies.
+            </p>
             </div>
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
@@ -37,16 +41,7 @@ const About = () => {
             </motion.div>
           </div>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-16 "
-          >
-            <p className="text-lg text-slate-600 leading-relaxed">
-              We work hand in hand with our clients for producing the design & engineering submissions of various trade / disciplines in the contract like all kind of Aluminium & glazing façades and bespoke systems, Stone and metal cladding facades, Temporary wall, rainscreen & SFS system, Steel Roofing structure and roof cladding designs, and all types of stainless steel and metal works scenarios and canopies.
-            </p>
-          </motion.div>
+        
         </div>
       </section>
 
